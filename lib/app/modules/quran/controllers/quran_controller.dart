@@ -8,6 +8,7 @@ class QuranController extends GetxController
     with GetSingleTickerProviderStateMixin {
   var page = 0.obs;
   PageController pageController = PageController();
+
   @override
   void onInit() async {
     super.onInit();

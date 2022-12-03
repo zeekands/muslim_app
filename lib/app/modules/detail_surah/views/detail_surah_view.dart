@@ -15,6 +15,38 @@ class DetailSurahView extends GetView<DetailSurahController> {
       appBar: AppBar(
         title: Text(controller.surahName),
       ),
+      bottomNavigationBar: BottomAppBar(
+        child: SizedBox(
+          height: 50.h,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              IconButton(
+                icon: const Icon(Icons.skip_previous),
+                onPressed: () {
+                  Get.back();
+                },
+              ),
+              IconButton(
+                icon: Icon(!controller.isPlaying.value
+                    ? Icons.play_arrow
+                    : Icons.pause_circle_filled_outlined),
+                onPressed: () {
+                  controller.audioPlayer.play(
+                    controller.dataSound.value,
+                  );
+                },
+              ),
+              IconButton(
+                icon: const Icon(Icons.skip_next),
+                onPressed: () {
+                  Get.back();
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
       body: FutureBuilder<DetailSurahWithEng>(
         future: controller.loadSurahWithEng(controller.surahNumber),
         builder: (context, snapshot) {
@@ -23,7 +55,6 @@ class DetailSurahView extends GetView<DetailSurahController> {
               itemCount: snapshot.data!.dataAyahs.length,
               itemBuilder: (context, index) {
                 final isPlaying = false.obs;
-
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
@@ -43,7 +74,9 @@ class DetailSurahView extends GetView<DetailSurahController> {
                           child: Text(
                               snapshot.data!.dataAyahs[index].text.toString(),
                               textAlign: TextAlign.right,
-                              style: TextStyle(fontSize: 25.sp)),
+                              style: TextStyle(
+                                  fontSize: 25.sp,
+                                  fontWeight: FontWeight.bold)),
                         ),
                       ],
                     ),
@@ -58,6 +91,9 @@ class DetailSurahView extends GetView<DetailSurahController> {
                     Obx(
                       () => IconButton(
                         onPressed: () async {
+                          controller.dataSound.value =
+                              snapshot.data!.dataAyahs[index].audio.toString();
+                          controller.indexSound.value = index;
                           controller.audioPlayer.onPlayerStateChanged
                               .listen((event) {
                             if (event == PlayerState.PLAYING) {

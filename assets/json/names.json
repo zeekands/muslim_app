@@ -1,0 +1,895 @@
+{
+  "names": [
+    {
+      "duration": 2000,
+      "name": "The Beneficent",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-001.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_001.mp3",
+      "name_simple": "Ar-Rahmaan",
+      "serial_no": 1,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_001.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Merciful",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-002.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_002.mp3",
+      "name_simple": "Ar-Raheem",
+      "serial_no": 2,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_002.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Eternal Lord",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-003.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_003.mp3",
+      "name_simple": "Al-Malik",
+      "serial_no": 3,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_003.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Most Sacred",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-004.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_004.mp3",
+      "name_simple": "Al-Quddus",
+      "serial_no": 4,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_004.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Embodiment of Peace",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-005.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_005.mp3",
+      "name_simple": "As-Salam",
+      "serial_no": 5,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_005.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Infuser of Faith",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-006.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_006.mp3",
+      "name_simple": "Al-Mu’min",
+      "serial_no": 6,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_006.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Preserver of Safety",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-007.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_007.mp3",
+      "name_simple": "Al-Muhaymin",
+      "serial_no": 7,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_007.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Mighty One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-008.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_008.mp3",
+      "name_simple": "Al-Aziz",
+      "serial_no": 8,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_008.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Omnipotent One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-009.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_009.mp3",
+      "name_simple": "Al-Jabbar",
+      "serial_no": 9,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_009.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Dominant One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-010.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_010.mp3",
+      "name_simple": "Al-Mutakabbir",
+      "serial_no": 10,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_010.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Creator",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-011.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_011.mp3",
+      "name_simple": "Al-Khaaliq",
+      "serial_no": 11,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_011.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Evolver",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-012.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_012.mp3",
+      "name_simple": "Al-Baari",
+      "serial_no": 12,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_012.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Flawless Shaper",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-013.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_013.mp3",
+      "name_simple": "Al-Musawwir",
+      "serial_no": 13,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_013.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Great Forgiver",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-014.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_014.mp3",
+      "name_simple": "Al-Ghaffaar",
+      "serial_no": 14,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_014.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The All-Prevailing One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-015.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_015.mp3",
+      "name_simple": "Al-Qahhaar",
+      "serial_no": 15,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_015.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Supreme Bestower",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-016.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_016.mp3",
+      "name_simple": "Al-Wahhab",
+      "serial_no": 16,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_016.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Total Provider",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-017.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_017.mp3",
+      "name_simple": "Ar-Razzaq",
+      "serial_no": 17,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_017.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Supreme Solver",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-018.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_018.mp3",
+      "name_simple": "Al-Fattah",
+      "serial_no": 18,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_018.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The All-Knowing One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-019.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_019.mp3",
+      "name_simple": "Al-Alim",
+      "serial_no": 19,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_019.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Restricting One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-020.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_020.mp3",
+      "name_simple": "Al-Qaabid",
+      "serial_no": 20,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_020.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Extender",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-021.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_021.mp3",
+      "name_simple": "Al-Baasit",
+      "serial_no": 21,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_021.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Reducer",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-022.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_022.mp3",
+      "name_simple": "Al-Khaafid",
+      "serial_no": 22,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_022.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Elevating One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-023.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_023.mp3",
+      "name_simple": "Ar-Rafi",
+      "serial_no": 23,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_023.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Honourer-Bestower",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-024.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_024.mp3",
+      "name_simple": "Al-Mu’izz",
+      "serial_no": 24,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_024.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Abaser",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-025.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_025.mp3",
+      "name_simple": "Al-Muzil",
+      "serial_no": 25,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_025.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The All-Hearer",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-026.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_026.mp3",
+      "name_simple": "As-Sami’",
+      "serial_no": 26,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_026.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The All-Seeing",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-027.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_027.mp3",
+      "name_simple": "Al-Baseer",
+      "serial_no": 27,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_027.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Impartial Judge",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-028.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_028.mp3",
+      "name_simple": "Al-Hakam",
+      "serial_no": 28,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_028.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Embodiment of Justice",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-029.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_029.mp3",
+      "name_simple": "Al-Adl",
+      "serial_no": 29,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_029.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Knower of Subtleties",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-030.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_030.mp3",
+      "name_simple": "Al-Lateef",
+      "serial_no": 30,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_030.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The All-Aware One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-031.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_031.mp3",
+      "name_simple": "Al-Khabeer",
+      "serial_no": 31,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_031.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Clement One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-032.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_032.mp3",
+      "name_simple": "Al-Haleem",
+      "serial_no": 32,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_032.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Magnificent One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-033.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_033.mp3",
+      "name_simple": "Al-Azeem",
+      "serial_no": 33,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_033.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Great Forgiver",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-034.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_034.mp3",
+      "name_simple": "Al-Ghafoor",
+      "serial_no": 34,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_034.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Acknowledging One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-035.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_035.mp3",
+      "name_simple": "Ash-Shakoor",
+      "serial_no": 35,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_035.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Sublime One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-036.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_036.mp3",
+      "name_simple": "Al-Aliyy",
+      "serial_no": 36,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_036.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Great One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-037.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_037.mp3",
+      "name_simple": "Al-Kabeer",
+      "serial_no": 37,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_037.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Guarding One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-038.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_038.mp3",
+      "name_simple": "Al-Hafiz",
+      "serial_no": 38,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_038.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Sustaining One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-039.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_039.mp3",
+      "name_simple": "Al-Muqeet",
+      "serial_no": 39,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_039.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Reckoning One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-040.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_040.mp3",
+      "name_simple": "Al-Haseeb",
+      "serial_no": 40,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_040.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Majestic One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-041.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_041.mp3",
+      "name_simple": "Al-Jaleel",
+      "serial_no": 41,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_041.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Bountiful One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-042.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_042.mp3",
+      "name_simple": "Al-Kareem",
+      "serial_no": 42,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_042.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Watchful One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-043.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_043.mp3",
+      "name_simple": "Ar-Raqeeb",
+      "serial_no": 43,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_043.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Responding One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-044.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_044.mp3",
+      "name_simple": "Al-Mujeeb",
+      "serial_no": 44,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_044.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The All-Pervading One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-045.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_045.mp3",
+      "name_simple": "Al-Waasi’",
+      "serial_no": 45,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_045.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Wise One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-046.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_046.mp3",
+      "name_simple": "Al-Hakeem",
+      "serial_no": 46,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_046.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Loving One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-047.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_047.mp3",
+      "name_simple": "Al-Wadud",
+      "serial_no": 47,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_047.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Glorious One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-048.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_048.mp3",
+      "name_simple": "Al-Majeed",
+      "serial_no": 48,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_048.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Infuser of New Life",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-049.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_049.mp3",
+      "name_simple": "Al-Ba’ith",
+      "serial_no": 49,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_049.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The All Observing Witness",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-050.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_050.mp3",
+      "name_simple": "Ash-Shaheed",
+      "serial_no": 50,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_050.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Embodiment of Truth",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-051.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_051.mp3",
+      "name_simple": "Al-Haqq",
+      "serial_no": 51,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_051.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Universal Trustee",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-052.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_052.mp3",
+      "name_simple": "Al-Wakeel",
+      "serial_no": 52,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_052.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Strong One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-053.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_053.mp3",
+      "name_simple": "Al-Qawwiyy",
+      "serial_no": 53,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_053.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Firm One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-054.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_054.mp3",
+      "name_simple": "Al-Mateen",
+      "serial_no": 54,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_054.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Protecting Associate",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-055.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_055.mp3",
+      "name_simple": "Al-Waliyy",
+      "serial_no": 55,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_055.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Sole-Laudable One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-056.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_056.mp3",
+      "name_simple": "Al-Hameed",
+      "serial_no": 56,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_056.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The All-Enumerating One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-057.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_057.mp3",
+      "name_simple": "Al-Muhsee",
+      "serial_no": 57,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_057.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Originator",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-058.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_058.mp3",
+      "name_simple": "Al-Mubdi",
+      "serial_no": 58,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_058.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Restorer",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-059.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_059.mp3",
+      "name_simple": "Al-Mueed",
+      "serial_no": 59,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_059.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Maintainer of life",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-060.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_060.mp3",
+      "name_simple": "Al-Muhyi",
+      "serial_no": 60,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_060.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Inflictor of Death",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-061.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_061.mp3",
+      "name_simple": "Al-Mumeet",
+      "serial_no": 61,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_061.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Eternally Living One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-062.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_062.mp3",
+      "name_simple": "Al-Hayy",
+      "serial_no": 62,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_062.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Self-Subsisting One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-063.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_063.mp3",
+      "name_simple": "Al-Qayyoom",
+      "serial_no": 63,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_063.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Pointing One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-064.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_064.mp3",
+      "name_simple": "Al-Waajid",
+      "serial_no": 64,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_064.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The All-Noble One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-065.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_065.mp3",
+      "name_simple": "Al-Maajid",
+      "serial_no": 65,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_065.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Only One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-066.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_066.mp3",
+      "name_simple": "Al-Waahid",
+      "serial_no": 66,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_066.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Sole One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-067.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_067.mp3",
+      "name_simple": "Al-Ahad",
+      "serial_no": 67,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_067.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Supreme Provider",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-068.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_068.mp3",
+      "name_simple": "As-Samad",
+      "serial_no": 68,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_068.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Omnipotent One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-069.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_069.mp3",
+      "name_simple": "Al-Qaadir",
+      "serial_no": 69,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_069.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The All Authoritative One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-070.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_070.mp3",
+      "name_simple": "Al-Muqtadir",
+      "serial_no": 70,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_070.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Expediting One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-071.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_071.mp3",
+      "name_simple": "Al-Muqaddim",
+      "serial_no": 71,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_071.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Delayer",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-072.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_072.mp3",
+      "name_simple": "Al-Mu’akhkhir",
+      "serial_no": 72,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_072.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Very First",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-073.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_073.mp3",
+      "name_simple": "Al-Awwal",
+      "serial_no": 73,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_073.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Infinite Last One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-074.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_074.mp3",
+      "name_simple": "Al-Akhir",
+      "serial_no": 74,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_074.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Perceptible",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-075.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_075.mp3",
+      "name_simple": "Az-Zaahir",
+      "serial_no": 75,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_075.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Imperceptible",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-076.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_076.mp3",
+      "name_simple": "Al-Baatin",
+      "serial_no": 76,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_076.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Holder of Supreme Authority",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-077.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_077.mp3",
+      "name_simple": "Al-Waali",
+      "serial_no": 77,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_077.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Extremely Exalted One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-078.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_078.mp3",
+      "name_simple": "Al-Muta’ali",
+      "serial_no": 78,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_078.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Fountain-Head of Truth",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-079.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_079.mp3",
+      "name_simple": "Al-Barr",
+      "serial_no": 79,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_079.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Ever-Acceptor of Repentance",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-080.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_080.mp3",
+      "name_simple": "At-Tawwaab",
+      "serial_no": 80,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_080.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Retaliator",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-081.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_081.mp3",
+      "name_simple": "Al-Muntaqim",
+      "serial_no": 81,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_081.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Supreme Pardoner",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-082.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_082.mp3",
+      "name_simple": "Al-Afuww",
+      "serial_no": 82,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_082.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Benign One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-083.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_083.mp3",
+      "name_simple": "Ar-Ra’oof",
+      "serial_no": 83,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_083.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Eternal Possessor of Sovereignty",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-084.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_084.mp3",
+      "name_simple": "Maalik-ul-Mulk",
+      "serial_no": 84,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_084.jpeg"
+    },
+    {
+      "duration": 3000,
+      "name": "The Possessor of Majesty and Honour",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-085.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_085.mp3",
+      "name_simple": "Zul-Jalaali-wal-Ikram",
+      "serial_no": 85,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_085.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Just One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-086.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_086.mp3",
+      "name_simple": "Al-Muqsit",
+      "serial_no": 86,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_086.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Assembler of Scattered Creations",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-087.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_087.mp3",
+      "name_simple": "Al-Jaami’",
+      "serial_no": 87,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_087.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Self-Sufficient One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-088.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_088.mp3",
+      "name_simple": "Al-Ghaniyy",
+      "serial_no": 88,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_088.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Bestower of Sufficiency",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-089.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_089.mp3",
+      "name_simple": "Al-Mughni",
+      "serial_no": 89,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_089.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Preventer",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-090.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_090.mp3",
+      "name_simple": "Al-Maani’",
+      "serial_no": 90,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_090.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Distressor",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-091.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_091.mp3",
+      "name_simple": "Ad-Daarr",
+      "serial_no": 91,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_091.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Bestower of Benefits",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-092.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_092.mp3",
+      "name_simple": "An-Naafi’",
+      "serial_no": 92,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_092.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Prime Light",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-093.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_093.mp3",
+      "name_simple": "An-Noor",
+      "serial_no": 93,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_093.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Provider of Guidance",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-094.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_094.mp3",
+      "name_simple": "Al-Haadi",
+      "serial_no": 94,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_094.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Unique One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-095.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_095.mp3",
+      "name_simple": "Al-Badi’",
+      "serial_no": 95,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_095.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Ever Surviving One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-096.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_096.mp3",
+      "name_simple": "Al-Baaqi",
+      "serial_no": 96,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_096.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Eternal Inheritor",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-097.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_097.mp3",
+      "name_simple": "Al-Waaris",
+      "serial_no": 97,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_097.jpeg"
+    },
+    {
+      "duration": 2000,
+      "name": "The Guide to Path of Rectitude",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-098.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_098.mp3",
+      "name_simple": "Ar-Rasheed",
+      "serial_no": 98,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_098.jpeg"
+    },
+    {
+      "duration": 1000,
+      "name": "The Extensively Enduring One",
+      "name_arabic": "https://cdn.mymuslimdaily.com/res/names99/new-220-099.png",
+      "name_audio": "https://cdn.mymuslimdaily.com/res/names99/name_099.mp3",
+      "name_simple": "As-Saboor",
+      "serial_no": 99,
+      "share_url": "https://cdn.mymuslimdaily.com/res/names99/share_099.jpeg"
+    }
+  ]
+}

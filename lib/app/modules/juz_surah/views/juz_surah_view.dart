@@ -1,9 +1,7 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:muslim_app/app/data/models/juz_surah_model.dart'
-    as juz_surah_model;
+import 'package:muslim_app/app/data/models/detail_surah_with_eng.dart';
 
 import '../controllers/juz_surah_controller.dart';
 
@@ -14,28 +12,17 @@ class JuzSurahView extends GetView<JuzSurahController> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Juz ${controller.numberJuz}'),
+        title: Text('Juz ${controller.juzNumber}'),
       ),
-      body: FutureBuilder<juz_surah_model.JuzSurahDetail>(
-        future: controller.getJuzSurah(controller.numberJuz),
+      body: FutureBuilder<DetailJuzWithEng>(
+        future: controller.loadSurahWithEng(controller.juzNumber),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return Column(
               children: [
-                Container(
-                    width: 1.sw,
-                    height: 50.h,
-                    alignment: Alignment.center,
-                    child: Text(
-                      '${snapshot.data!.data!.juzStartInfo} sampai ${snapshot.data!.data!.juzEndInfo}',
-                      style: TextStyle(
-                        fontSize: ScreenUtil().setSp(20),
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )),
                 Flexible(
                   child: ListView.separated(
-                    itemCount: snapshot.data!.data!.verses!.length,
+                    itemCount: snapshot.data!.dataAyahs.length,
                     itemBuilder: (context, index) {
                       final isPlaying = false.obs;
                       return Column(
@@ -46,7 +33,7 @@ class JuzSurahView extends GetView<JuzSurahController> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "${snapshot.data!.data!.verses![index].number!.inSurah}",
+                                "${snapshot.data!.dataAyahs[index].number}",
                                 style: TextStyle(
                                     fontSize: ScreenUtil().setSp(16),
                                     fontWeight: FontWeight.bold,
@@ -55,53 +42,22 @@ class JuzSurahView extends GetView<JuzSurahController> {
                               SizedBox(
                                 width: 0.75.sw,
                                 child: Text(
-                                    "${snapshot.data!.data!.verses![index].text!.arab}",
+                                    "${snapshot.data!.dataAyahs[index].text}",
                                     textAlign: TextAlign.right,
-                                    style: TextStyle(fontSize: 25.sp)),
+                                    style: TextStyle(
+                                        fontSize: 25.sp,
+                                        fontWeight: FontWeight.bold)),
                               ),
                             ],
                           ),
                           10.verticalSpace,
-                          Text(
-                              "${snapshot.data!.data!.verses![index].translation!.id}",
+                          Text("${snapshot.data!.dataAyahsEng[index].text}",
                               textAlign: TextAlign.left,
                               style: TextStyle(
                                   height: 1.3.sp,
                                   fontSize: 14.sp,
                                   color: Colors.grey[500])),
                           10.verticalSpace,
-                          Obx(
-                            () => IconButton(
-                              onPressed: () async {
-                                controller.audioPlayer.onPlayerStateChanged
-                                    .listen((event) {
-                                  if (event == PlayerState.PLAYING) {
-                                    isPlaying.value = true;
-                                  } else {
-                                    isPlaying.value = false;
-                                  }
-                                });
-                                if (isPlaying.value) {
-                                  await controller.audioPlayer.pause();
-                                  isPlaying.value = false;
-                                } else {
-                                  await controller.audioPlayer.play(snapshot
-                                      .data!
-                                      .data!
-                                      .verses![index]
-                                      .audio!
-                                      .primary!);
-                                  isPlaying.value = true;
-                                }
-                              },
-                              icon: Icon(
-                                isPlaying.value
-                                    ? Icons.pause
-                                    : Icons.play_arrow,
-                                color: Colors.blue,
-                              ),
-                            ),
-                          ),
                         ],
                       ).paddingAll(20.r);
                     },
@@ -123,7 +79,7 @@ class JuzSurahView extends GetView<JuzSurahController> {
               ),
             );
           } else {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }
