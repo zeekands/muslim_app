@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:muslim_app/app/data/models/surah_model_model.dart';
 import 'package:muslim_app/app/routes/app_pages.dart';
+import 'package:muslim_app/app/utils/colors.dart';
 
 import '../controllers/quran_controller.dart';
 
@@ -14,33 +15,23 @@ class QuranView extends GetView<QuranController> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(ScreenUtil().setHeight(120)),
-          child: Image.asset(
-            'assets/images/quran.png',
-            fit: BoxFit.cover,
+        appBar: AppBar(
+          title: const Text('Quran'),
+          bottom: const TabBar(
+            indicatorSize: TabBarIndicatorSize.label,
+            indicatorColor: peach,
+            tabs: [
+              Tab(
+                text: 'SURAH',
+              ),
+              Tab(
+                text: 'JUZ',
+              ),
+            ],
           ),
         ),
         body: Column(
           children: [
-            SizedBox(
-              height: ScreenUtil().setHeight(50),
-              child: TabBar(
-                labelColor: Colors.black,
-                indicatorSize: TabBarIndicatorSize.label,
-                indicatorColor: Colors.green,
-                tabs: [
-                  Tab(
-                    child: Text('SURAH',
-                        style: TextStyle(fontSize: 14.sp, color: Colors.black)),
-                  ),
-                  Tab(
-                    child: Text('JUZ',
-                        style: TextStyle(fontSize: 14.sp, color: Colors.black)),
-                  ),
-                ],
-              ),
-            ),
             Flexible(
               child: TabBarView(
                 children: [
@@ -145,9 +136,11 @@ class QuranView extends GetView<QuranController> {
                     ),
                   ).paddingSymmetric(horizontal: 20.w),
                 ),
-              ).paddingSymmetric(horizontal: 10.w);
+              ).paddingSymmetric(
+                horizontal: 10.w,
+              );
             },
-          );
+          ).paddingOnly(top: 10.h);
         } else if (snapshot.hasError) {
           return Center(
             child: Text(snapshot.error.toString()),
@@ -176,58 +169,63 @@ class QuranView extends GetView<QuranController> {
               );
             },
             child: Container(
+              height: 50.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.r),
                 color: Colors.white,
               ),
               width: 1.sw,
-              height: 70.h,
-              child: Row(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    width: 32.w,
-                    height: 32.h,
-                    child: Stack(
-                      children: [
-                        Center(
-                          child: Image.asset(
-                            'assets/icon/ic_ayat.png',
-                            width: 32.h,
-                            height: 32.w,
-                          ),
-                        ),
-                        Center(
-                          child: Text(
-                            '$index',
-                            style: TextStyle(
-                              fontSize: ScreenUtil().setSp(10),
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  10.horizontalSpace,
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  Row(
                     children: [
-                      Text(
-                        'Juz $index',
-                        style: TextStyle(
-                            fontSize: 13.sp, fontWeight: FontWeight.bold),
-                      )
+                      SizedBox(
+                        width: 32.w,
+                        height: 32.h,
+                        child: Stack(
+                          children: [
+                            Center(
+                              child: Image.asset(
+                                'assets/icon/ic_ayat.png',
+                                width: 32.h,
+                                height: 32.w,
+                              ),
+                            ),
+                            Center(
+                              child: Text(
+                                '$index',
+                                style: TextStyle(
+                                  fontSize: ScreenUtil().setSp(10),
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      10.horizontalSpace,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Juz $index',
+                            style: TextStyle(
+                                fontSize: 13.sp, fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
+                      const Spacer(),
                     ],
                   ),
-                  const Spacer(),
                 ],
               ),
             ).paddingSymmetric(horizontal: 20.w),
           ),
         ).paddingSymmetric(horizontal: 10.w);
       },
-    );
+    ).paddingSymmetric(vertical: 10.h);
   }
 }

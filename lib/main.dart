@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:muslim_app/app/utils/colors.dart';
 
 import 'app/routes/app_pages.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await ScreenUtil.ensureScreenSize();
+  await initializeDateFormatting('id_ID', null);
   SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle.light.copyWith(statusBarColor: Colors.transparent));
   runApp(
@@ -21,12 +25,12 @@ void main() {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
           appBarTheme: AppBarTheme(
-            color: Colors.white,
+            color: green,
             elevation: 0,
             centerTitle: false,
-            iconTheme: const IconThemeData(color: Colors.black),
+            iconTheme: const IconThemeData(color: Colors.white),
             titleTextStyle: TextStyle(
-              color: Colors.black,
+              color: Colors.white,
               fontWeight: FontWeight.bold,
               fontSize: ScreenUtil().setSp(20),
             ),

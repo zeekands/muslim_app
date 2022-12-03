@@ -6,7 +6,7 @@ class SurahProvider extends GetConnect {
   Future<List<Data>> loadSurah() async {
     final response = await get(
       "${Routes.BASE_URL}/surah",
-    ).timeout(const Duration(seconds: 5));
+    ).timeout(const Duration(seconds: 30));
 
     if (response.statusCode == 200) {
       final data = SurahModel.fromJson(response.body as Map<String, dynamic>);
