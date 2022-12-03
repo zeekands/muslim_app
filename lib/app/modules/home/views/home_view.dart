@@ -21,7 +21,7 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
         body: controller.obx(
       (state) => RefreshIndicator(
-        onRefresh: () async => controller.loadPrayerTimes(),
+        onRefresh: () async => controller.onInit(),
         edgeOffset: 100,
         child: CustomScrollView(
           slivers: [
@@ -102,7 +102,7 @@ class HomeView extends GetView<HomeController> {
                         Column(
                           children: [
                             timeCard(controller.prayerTimeString,
-                                    controller.prayerNow.name)
+                                    controller.prayerNameString)
                                 .paddingSymmetric(horizontal: 10.w),
                             50.verticalSpace,
                             MenuCard(),
@@ -171,17 +171,17 @@ class HomeView extends GetView<HomeController> {
                   color: Colors.white,
                   fontWeight: FontWeight.bold)),
           10.verticalSpace,
-          Text(
+          Obx(() => Text(
               controller.prayerTimes
                           .timeForPrayer(controller.prayerNext)
                           ?.hour !=
                       null
-                  ? "${controller.prayerNext.name} pada ${controller.prayerTimes.timeForPrayer(controller.prayerNext)?.hour.toString()} : ${controller.prayerTimes.timeForPrayer(controller.prayerNext)?.minute.toString()}"
+                  ? "-" + controller.prayerTimeObs.value
                   : "Subuh pada 0${controller.prayerTimes.fajr.hour}:0${controller.prayerTimes.fajr.minute}",
               style: TextStyle(
                 fontSize: 18.sp,
                 color: Colors.white,
-              )),
+              ))),
         ],
       ),
     );
@@ -227,7 +227,7 @@ class HomeView extends GetView<HomeController> {
   Container MenuCard() {
     return Container(
       width: 1.sw,
-      height: 0.1.sh,
+      height: 0.2.sh,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.r),
         color: Colors.white,
@@ -239,79 +239,339 @@ class HomeView extends GetView<HomeController> {
           ),
         ],
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          GestureDetector(
-            onTap: () => Get.toNamed(Routes.DOA),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            40.horizontalSpace,
+            Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  CupertinoIcons.hand_draw,
-                  size: 32.r,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    GestureDetector(
+                      onTap: () => Get.toNamed(Routes.DOA),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            CupertinoIcons.hand_draw,
+                            size: 32.r,
+                          ),
+                          5.verticalSpace,
+                          const Text("Doa")
+                        ],
+                      ),
+                    ),
+                    25.horizontalSpace,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.room_preferences,
+                          size: 32.r,
+                        ),
+                        5.verticalSpace,
+                        const Text("Tasbih")
+                      ],
+                    ),
+                    25.horizontalSpace,
+                    GestureDetector(
+                      onTap: () => Get.toNamed(Routes.ATKHTAR),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            CupertinoIcons.hand_raised_fill,
+                            size: 32.r,
+                          ),
+                          5.verticalSpace,
+                          const Text("Akhtar")
+                        ],
+                      ),
+                    ),
+                    25.horizontalSpace,
+                    GestureDetector(
+                      onTap: () => Get.toNamed(Routes.QIBLAH),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            CupertinoIcons.compass,
+                            size: 32.r,
+                          ),
+                          5.verticalSpace,
+                          const Text("Qibla")
+                        ],
+                      ),
+                    ),
+                    25.horizontalSpace,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          CupertinoIcons.calendar,
+                          size: 32.r,
+                        ),
+                        5.verticalSpace,
+                        const Text("Calendar")
+                      ],
+                    ),
+                  ],
                 ),
-                5.verticalSpace,
-                const Text("Doa")
+                20.verticalSpace,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    GestureDetector(
+                      onTap: () => Get.toNamed(Routes.DOA),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            CupertinoIcons.hand_draw,
+                            size: 32.r,
+                          ),
+                          5.verticalSpace,
+                          const Text("Doa")
+                        ],
+                      ),
+                    ),
+                    25.horizontalSpace,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.room_preferences,
+                          size: 32.r,
+                        ),
+                        5.verticalSpace,
+                        const Text("Tasbih")
+                      ],
+                    ),
+                    25.horizontalSpace,
+                    GestureDetector(
+                      onTap: () => Get.toNamed(Routes.ATKHTAR),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            CupertinoIcons.hand_raised_fill,
+                            size: 32.r,
+                          ),
+                          5.verticalSpace,
+                          const Text("Akhtar")
+                        ],
+                      ),
+                    ),
+                    25.horizontalSpace,
+                    GestureDetector(
+                      onTap: () => Get.toNamed(Routes.QIBLAH),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            CupertinoIcons.compass,
+                            size: 32.r,
+                          ),
+                          5.verticalSpace,
+                          const Text("Qibla")
+                        ],
+                      ),
+                    ),
+                    25.horizontalSpace,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          CupertinoIcons.calendar,
+                          size: 32.r,
+                        ),
+                        5.verticalSpace,
+                        const Text("Calendar")
+                      ],
+                    ),
+                  ],
+                ),
               ],
             ),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.room_preferences,
-                size: 32.r,
-              ),
-              5.verticalSpace,
-              const Text("Tasbih")
-            ],
-          ),
-          GestureDetector(
-            onTap: () => Get.toNamed(Routes.ATKHTAR),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+            50.horizontalSpace,
+            Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  CupertinoIcons.hand_raised_fill,
-                  size: 32.r,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    GestureDetector(
+                      onTap: () => Get.toNamed(Routes.DOA),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            CupertinoIcons.hand_draw,
+                            size: 32.r,
+                          ),
+                          5.verticalSpace,
+                          const Text("Doa")
+                        ],
+                      ),
+                    ),
+                    25.horizontalSpace,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.room_preferences,
+                          size: 32.r,
+                        ),
+                        5.verticalSpace,
+                        const Text("Tasbih")
+                      ],
+                    ),
+                    25.horizontalSpace,
+                    GestureDetector(
+                      onTap: () => Get.toNamed(Routes.ATKHTAR),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            CupertinoIcons.hand_raised_fill,
+                            size: 32.r,
+                          ),
+                          5.verticalSpace,
+                          const Text("Akhtar")
+                        ],
+                      ),
+                    ),
+                    25.horizontalSpace,
+                    GestureDetector(
+                      onTap: () => Get.toNamed(Routes.QIBLAH),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            CupertinoIcons.compass,
+                            size: 32.r,
+                          ),
+                          5.verticalSpace,
+                          const Text("Qibla")
+                        ],
+                      ),
+                    ),
+                    25.horizontalSpace,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          CupertinoIcons.calendar,
+                          size: 32.r,
+                        ),
+                        5.verticalSpace,
+                        const Text("Calendar")
+                      ],
+                    ),
+                  ],
                 ),
-                5.verticalSpace,
-                const Text("Akhtar")
+                20.verticalSpace,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    GestureDetector(
+                      onTap: () => Get.toNamed(Routes.DOA),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            CupertinoIcons.hand_draw,
+                            size: 32.r,
+                          ),
+                          5.verticalSpace,
+                          const Text("Doa")
+                        ],
+                      ),
+                    ),
+                    25.horizontalSpace,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.room_preferences,
+                          size: 32.r,
+                        ),
+                        5.verticalSpace,
+                        const Text("Tasbih")
+                      ],
+                    ),
+                    25.horizontalSpace,
+                    GestureDetector(
+                      onTap: () => Get.toNamed(Routes.ATKHTAR),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            CupertinoIcons.hand_raised_fill,
+                            size: 32.r,
+                          ),
+                          5.verticalSpace,
+                          const Text("Akhtar")
+                        ],
+                      ),
+                    ),
+                    25.horizontalSpace,
+                    GestureDetector(
+                      onTap: () => Get.toNamed(Routes.QIBLAH),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            CupertinoIcons.compass,
+                            size: 32.r,
+                          ),
+                          5.verticalSpace,
+                          const Text("Qibla")
+                        ],
+                      ),
+                    ),
+                    25.horizontalSpace,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          CupertinoIcons.calendar,
+                          size: 32.r,
+                        ),
+                        5.verticalSpace,
+                        const Text("Calendar")
+                      ],
+                    ),
+                  ],
+                ),
               ],
             ),
-          ),
-          GestureDetector(
-            onTap: () => Get.toNamed(Routes.QIBLAH),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  CupertinoIcons.compass,
-                  size: 32.r,
-                ),
-                5.verticalSpace,
-                const Text("Qibla")
-              ],
-            ),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                CupertinoIcons.calendar,
-                size: 32.r,
-              ),
-              5.verticalSpace,
-              const Text("Calendar")
-            ],
-          ),
-        ],
+            50.horizontalSpace,
+          ],
+        ),
       ),
     );
   }

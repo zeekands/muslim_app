@@ -35,13 +35,13 @@ class SalahTimeView extends GetView<SalahTimeController> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    width: .4.sw,
                     height: 30.h,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.r),
                       color: const Color.fromRGBO(0, 0, 0, 0.15),
                     ),
                     child: Row(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         10.horizontalSpace,
                         Icon(
@@ -57,7 +57,7 @@ class SalahTimeView extends GetView<SalahTimeController> {
                             fontSize: ScreenUtil().setSp(14),
                             color: Colors.white,
                           ),
-                        ),
+                        ).paddingOnly(right: 10.w),
                       ],
                     ),
                   ).paddingAll(20.r),

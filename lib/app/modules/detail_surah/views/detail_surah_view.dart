@@ -15,126 +15,70 @@ class DetailSurahView extends GetView<DetailSurahController> {
       appBar: AppBar(
         title: Text(controller.surahName),
       ),
-      bottomNavigationBar: BottomAppBar(
-        child: SizedBox(
-          height: 50.h,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              IconButton(
-                icon: const Icon(Icons.skip_previous),
-                onPressed: () {
-                  Get.back();
-                },
-              ),
-              IconButton(
-                icon: Icon(!controller.isPlaying.value
-                    ? Icons.play_arrow
-                    : Icons.pause_circle_filled_outlined),
-                onPressed: () {
-                  controller.audioPlayer.play(
-                    controller.dataSound.value,
-                  );
-                },
-              ),
-              IconButton(
-                icon: const Icon(Icons.skip_next),
-                onPressed: () {
-                  Get.back();
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
-      body: FutureBuilder<DetailSurahWithEng>(
-        future: controller.loadSurahWithEng(controller.surahNumber),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return ListView.separated(
-              itemCount: snapshot.data!.dataAyahs.length,
-              itemBuilder: (context, index) {
-                final isPlaying = false.obs;
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "${controller.surahNumber}:${snapshot.data!.dataAyahs[index].numberInSurah}",
-                          style: TextStyle(
-                              fontSize: ScreenUtil().setSp(16),
-                              fontWeight: FontWeight.bold,
-                              color: Colors.green),
-                        ),
-                        SizedBox(
-                          width: 0.75.sw,
-                          child: Text(
-                              snapshot.data!.dataAyahs[index].text.toString(),
-                              textAlign: TextAlign.right,
-                              style: TextStyle(
-                                  fontSize: 25.sp,
-                                  fontWeight: FontWeight.bold)),
-                        ),
-                      ],
+      body: Text("ok"),
+    );
+  }
+
+  FutureBuilder<DetailSurahWithEng> futureDetailSurah() {
+    return FutureBuilder<DetailSurahWithEng>(
+      future: controller.loadSurahWithEng(controller.surahNumber),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return ListView.builder(
+            itemCount: snapshot.data!.dataAyahs.length,
+            itemBuilder: (context, index) {
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.r),
+                      color: Colors.white,
                     ),
-                    10.verticalSpace,
-                    Text(snapshot.data!.dataAyahsEng[index].text.toString(),
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                            height: 1.3.sp,
-                            fontSize: 14.sp,
-                            color: Colors.grey[500])),
-                    10.verticalSpace,
-                    Obx(
-                      () => IconButton(
-                        onPressed: () async {
-                          controller.dataSound.value =
-                              snapshot.data!.dataAyahs[index].audio.toString();
-                          controller.indexSound.value = index;
-                          controller.audioPlayer.onPlayerStateChanged
-                              .listen((event) {
-                            if (event == PlayerState.PLAYING) {
-                              isPlaying.value = true;
-                            } else {
-                              isPlaying.value = false;
-                            }
-                          });
-                          if (isPlaying.value) {
-                            await controller.audioPlayer.pause();
-                            isPlaying.value = false;
-                          } else {
-                            await controller.audioPlayer.play(snapshot
-                                .data!.dataAyahs[index].audio
-                                .toString());
-                            isPlaying.value = true;
-                          }
-                        },
-                        icon: !isPlaying.value
-                            ? const Icon(Icons.play_circle_outline_rounded)
-                            : const Icon(Icons.pause_circle_outline_rounded),
+                    child: SizedBox(
+                      width: 32.w,
+                      height: 32.h,
+                      child: Stack(
+                        children: [
+                          Center(
+                            child: Image.asset(
+                              'assets/icon/ic_ayat.png',
+                              width: 32.h,
+                              height: 32.w,
+                            ),
+                          ),
+                          Center(
+                            child: Text(
+                              '${snapshot.data!.dataAyahs[index].number}',
+                              style: TextStyle(
+                                fontSize: ScreenUtil().setSp(10),
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                  ],
-                ).paddingAll(20.r);
-              },
-              separatorBuilder: (BuildContext context, int index) {
-                return Divider(
-                  color: Colors.grey[500],
-                  thickness: .3.h,
-                );
-              },
-            );
-          } else if (snapshot.hasError) {
-            return Text(snapshot.error.toString());
-          }
-          return const Center(
-            child: CircularProgressIndicator(),
+                  ),
+                  SizedBox(
+                    width: 0.75.sw,
+                    child: Text(snapshot.data!.dataAyahs[index].text.toString(),
+                        textAlign: TextAlign.right,
+                        style: TextStyle(
+                            fontSize: 25.sp, fontWeight: FontWeight.bold)),
+                  ),
+                ],
+              ).paddingAll(20.r);
+            },
           );
-        },
-      ),
+        } else if (snapshot.hasError) {
+          return Text(snapshot.error.toString());
+        }
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      },
     );
   }
 }

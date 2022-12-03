@@ -82,12 +82,15 @@ class AtkhtarView extends GetView<AtkhtarController> {
             ),
             child: SingleChildScrollView(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "${controller.atkhtarMorning[index].title}",
-                    style: TextStyle(
-                      fontSize: ScreenUtil().setSp(24),
-                      fontWeight: FontWeight.bold,
+                  Center(
+                    child: Text(
+                      "${controller.atkhtarMorning[index].title}",
+                      style: TextStyle(
+                        fontSize: ScreenUtil().setSp(24),
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   20.verticalSpace,
@@ -98,6 +101,12 @@ class AtkhtarView extends GetView<AtkhtarController> {
                       fontSize: ScreenUtil().setSp(24),
                       fontWeight: FontWeight.bold,
                     ),
+                  ),
+                  20.verticalSpace,
+                  Icon(
+                    Icons.volume_up,
+                    color: Colors.black,
+                    size: 30.r,
                   ),
                   20.verticalSpace,
                   Text(
@@ -131,12 +140,15 @@ class AtkhtarView extends GetView<AtkhtarController> {
             ),
             child: SingleChildScrollView(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "${controller.atkhtars[index].title}",
-                    style: TextStyle(
-                      fontSize: ScreenUtil().setSp(24),
-                      fontWeight: FontWeight.bold,
+                  Center(
+                    child: Text(
+                      "${controller.atkhtars[index].title}",
+                      style: TextStyle(
+                        fontSize: ScreenUtil().setSp(24),
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   20.verticalSpace,
@@ -149,8 +161,14 @@ class AtkhtarView extends GetView<AtkhtarController> {
                     ),
                   ),
                   20.verticalSpace,
+                  Icon(
+                    Icons.volume_up,
+                    color: Colors.black,
+                    size: 30.r,
+                  ),
+                  20.verticalSpace,
                   Text(
-                    "${controller.atkhtars.elementAt(index).contentEn}",
+                    "${controller.atkhtarMorning.elementAt(index).contentEn}",
                     textAlign: TextAlign.left,
                     style: TextStyle(
                         fontSize: ScreenUtil().setSp(18),

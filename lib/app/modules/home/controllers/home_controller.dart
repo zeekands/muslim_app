@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:adhan/adhan.dart';
@@ -22,6 +23,8 @@ class HomeController extends GetxController with StateMixin {
   Prayer prayerNow = Prayer.asr;
   Prayer prayerNext = Prayer.asr;
   String prayerTimeString = "";
+  String prayerNameString = "";
+  final prayerTimeObs = "".obs;
   var position = Position(
       latitude: 0.0,
       longitude: 0.0,
@@ -62,6 +65,7 @@ class HomeController extends GetxController with StateMixin {
     super.onInit();
     change(null, status: RxStatus.empty());
     loadAsmaulHusna();
+    startTimer();
     position = await determinePosition();
     placemarks =
         await placemarkFromCoordinates(position.latitude, position.longitude);
@@ -78,9 +82,44 @@ class HomeController extends GetxController with StateMixin {
     prayerTimes = PrayerTimes.today(myCoordinates, params);
     prayerNow = prayerTimes.currentPrayer();
     prayerNext = prayerTimes.nextPrayer();
-    prayerTimeString =
-        "${prayerTimes.timeForPrayer(prayerNow)?.hour.toString()} : ${prayerTimes.timeForPrayer(prayerNow)?.minute.toString()}";
+
+    if (prayerTimes.timeForPrayer(prayerNext)!.hour < 10 &&
+        prayerTimes.timeForPrayer(prayerNext)!.minute < 10) {
+      prayerTimeString =
+          "0${prayerTimes.timeForPrayer(prayerNext)?.hour}:0${prayerTimes.timeForPrayer(prayerNext)?.minute.toString()}";
+    } else if (prayerTimes.timeForPrayer(prayerNext)!.hour < 10) {
+      prayerTimeString =
+          "0${prayerTimes.timeForPrayer(prayerNext)?.hour}:${prayerTimes.timeForPrayer(prayerNext)?.minute.toString()}";
+    } else if (prayerTimes.timeForPrayer(prayerNext)!.minute < 10) {
+      prayerTimeString =
+          "${prayerTimes.timeForPrayer(prayerNext)?.hour}:0${prayerTimes.timeForPrayer(prayerNext)?.minute.toString()}";
+    } else {
+      prayerTimeString =
+          "${prayerTimes.timeForPrayer(prayerNext)?.hour}:${prayerTimes.timeForPrayer(prayerNext)?.minute.toString()}";
+    }
     await Future.delayed(const Duration(milliseconds: 100));
+    switch (prayerNext) {
+      case Prayer.fajr:
+        prayerNameString = "Subuh";
+        break;
+      case Prayer.dhuhr:
+        prayerNameString = "Dzuhur";
+        break;
+      case Prayer.asr:
+        prayerNameString = "Ashar";
+        break;
+      case Prayer.maghrib:
+        prayerNameString = "Maghrib";
+        break;
+      case Prayer.isha:
+        prayerNameString = "Isya";
+        break;
+      case Prayer.sunrise:
+        prayerNameString = "Terbit";
+        break;
+      default:
+        prayerNameString = "Subuh";
+    }
     change(asmaulHusna, status: RxStatus.success());
   }
 
@@ -88,5 +127,39 @@ class HomeController extends GetxController with StateMixin {
     change(null, status: RxStatus.loading());
     asmaulHusna = AsmaulHusna.fromJson(
         jsonDecode(await rootBundle.loadString('assets/json/names.json')));
+  }
+
+  String nextPrayerTimeString() {
+    var timeNow = DateTime.now();
+    var nextPrayerTime = prayerTimes.timeForPrayer(prayerNext);
+
+    var timeDifference = nextPrayerTime!.difference(timeNow);
+    var hours = timeDifference.inHours;
+    var minutes = timeDifference.inMinutes - (hours * 60);
+    var seconds = timeDifference.inSeconds - (hours * 3600) - (minutes * 60);
+
+    if (hours < 10 && minutes < 10 && seconds < 10) {
+      return "0$hours:0$minutes:0$seconds";
+    } else if (hours < 10 && minutes < 10) {
+      return "0$hours:0$minutes:$seconds";
+    } else if (hours < 10 && seconds < 10) {
+      return "0$hours:$minutes:0$seconds";
+    } else if (minutes < 10 && seconds < 10) {
+      return "$hours:0$minutes:0$seconds";
+    } else if (hours < 10) {
+      return "0$hours:$minutes:$seconds";
+    } else if (minutes < 10) {
+      return "$hours:0$minutes:$seconds";
+    } else if (seconds < 10) {
+      return "$hours:$minutes:0$seconds";
+    } else {
+      return "$hours:$minutes:$seconds";
+    }
+  }
+
+  void startTimer() {
+    Timer.periodic(const Duration(seconds: 1), (timer) {
+      prayerTimeObs.value = nextPrayerTimeString();
+    });
   }
 }
