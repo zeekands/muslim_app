@@ -406,7 +406,7 @@ class HomeView extends GetView<HomeController> {
                 ),
               ],
             ),
-            50.horizontalSpace,
+            20.horizontalSpace,
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

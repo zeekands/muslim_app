@@ -15,7 +15,7 @@ class DetailSurahView extends GetView<DetailSurahController> {
       appBar: AppBar(
         title: Text(controller.surahName),
       ),
-      body: Text("ok"),
+      body: controller.obx((state) => controller.pageViewBodySurah()),
     );
   }
 
