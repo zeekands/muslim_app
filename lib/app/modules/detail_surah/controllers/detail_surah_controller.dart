@@ -45,102 +45,165 @@ class DetailSurahController extends GetxController with StateMixin {
     );
   }
 
+  final indexPage = 0.obs;
+
   Widget pageViewBodySurah() {
-    final pageCount = detailSurahWithEng.value.dataAyahs.length ~/ 8 > 0
-        ? detailSurahWithEng.value.dataAyahs.length ~/ 8
+    final pageCount = detailSurahWithEng.value.dataAyahs.length / 8 > 0
+        ? detailSurahWithEng.value.dataAyahs.length ~/ 8 + 1
         : 1;
+
+    final remainingItem = detailSurahWithEng.value.dataAyahs.length % 8;
+
     return PageView.builder(
       controller: pageController,
       itemCount: pageCount,
       reverse: true,
+      onPageChanged: (index) {
+        indexPage.value = index;
+      },
       itemBuilder: (context, index) {
-        return Container(
-          child: Column(
-            children: [
-              Expanded(
-                child: ListView.builder(
-                  itemCount: 8 > detailSurahWithEng.value.dataAyahs.length
-                      ? detailSurahWithEng.value.dataAyahs.length
-                      : 8,
-                  itemBuilder: (context, i) {
-                    if (index > 0) {
-                      i = i + (index * 8);
-                    }
-                    return Container(
-                      margin: EdgeInsets.only(
-                        top: 10,
-                        left: 10,
-                        right: 10,
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.white,
-                            ),
-                            child: SizedBox(
-                              width: 32,
-                              height: 32,
-                              child: Stack(
-                                children: [
-                                  Center(
-                                    child: Image.asset(
-                                      'assets/icon/ic_ayat.png',
-                                      width: 32,
-                                      height: 32,
-                                    ),
-                                  ),
-                                  Center(
-                                    child: Text(
-                                      '${detailSurahWithEng.value.dataAyahs[i].number}',
-                                      style: TextStyle(
-                                        fontSize: 10,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: Container(
-                              margin: EdgeInsets.only(
-                                left: 10,
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Text(
-                                    '${detailSurahWithEng.value.dataAyahs[i].text}',
-                                    textAlign: TextAlign.right,
-                                    style: TextStyle(
-                                      fontSize: 28,
-                                    ),
-                                  ),
-                                  // Text(
-                                  //   '${detailSurahWithEng.value.dataAyahsEng[i].text}',
-                                  //   style: TextStyle(
-                                  //     fontSize: 12,
-                                  //   ),
-                                  // ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
+        String data = "";
+        if (detailSurahWithEng.value.dataAyahs.length < 8) {
+          for (int i = 0; i < detailSurahWithEng.value.dataAyahs.length; i++) {
+            data += detailSurahWithEng.value.dataAyahs[i].text! +
+                " {${detailSurahWithEng.value.dataAyahs[i].numberInSurah}} ";
+          }
+        } else {
+          for (int i = 0; i < 8; i++) {
+            if (index == 0) {
+              data += detailSurahWithEng.value.dataAyahs[i].text! +
+                  " {${detailSurahWithEng.value.dataAyahs[i].numberInSurah}} ";
+            } else if ((index == pageCount - 1) == false) {
+              if (detailSurahWithEng.value.dataAyahs.length - 8 < index * 8) {
+                i = i +
+                    (index * (detailSurahWithEng.value.dataAyahs.length - 8));
+                for (int j = i;
+                    j < detailSurahWithEng.value.dataAyahs.length - 8;
+                    j++) {
+                  data += detailSurahWithEng.value.dataAyahs[j].text! +
+                      " {${detailSurahWithEng.value.dataAyahs[j].numberInSurah}} ";
+                }
+              }
+              i = i + (index * 8);
+
+              for (int j = i; j < i + 8; j++) {
+                data += detailSurahWithEng.value.dataAyahs[j].text! +
+                    " {${detailSurahWithEng.value.dataAyahs[j].numberInSurah}} ";
+              }
+            } else {
+              i = 8;
+              var lastIndex =
+                  detailSurahWithEng.value.dataAyahs.length - remainingItem;
+              for (int j = lastIndex; j < lastIndex + remainingItem; j++) {
+                data += detailSurahWithEng.value.dataAyahs[j].text! +
+                    " {${detailSurahWithEng.value.dataAyahs[j].numberInSurah}} ";
+              }
+            }
+          }
+        }
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Flexible(
+              child: SingleChildScrollView(
+                child: Text(
+                  data,
+                  textAlign: TextAlign.justify,
+                  style: const TextStyle(fontSize: 28),
                 ),
               ),
-            ],
-          ),
+            ),
+            Container(
+              height: 40,
+              alignment: Alignment.center,
+              child: Text("Page ${index + 1} of $pageCount"),
+            )
+          ],
         );
+
+        // [
+        //   Expanded(
+        //     child: ListView.builder(
+        //       itemCount: 8 > detailSurahWithEng.value.dataAyahs.length
+        //           ? detailSurahWithEng.value.dataAyahs.length
+        //           : 8,
+        //       itemBuilder: (context, i) {
+        //         if (index > 0) {
+        //           i = i + (index * 8);
+        //         }
+        //         return Container(
+        //           margin: EdgeInsets.only(
+        //             top: 10,
+        //             left: 10,
+        //             right: 10,
+        //           ),
+        //           child: Row(
+        //             mainAxisAlignment: MainAxisAlignment.center,
+        //             crossAxisAlignment: CrossAxisAlignment.start,
+        //             children: [
+        //               Container(
+        //                 decoration: BoxDecoration(
+        //                   borderRadius: BorderRadius.circular(10),
+        //                   color: Colors.white,
+        //                 ),
+        //                 child: SizedBox(
+        //                   width: 32,
+        //                   height: 32,
+        //                   child: Stack(
+        //                     children: [
+        //                       Center(
+        //                         child: Image.asset(
+        //                           'assets/icon/ic_ayat.png',
+        //                           width: 32,
+        //                           height: 32,
+        //                         ),
+        //                       ),
+        //                       Center(
+        //                         child: Text(
+        //                           '${detailSurahWithEng.value.dataAyahs[i].numberInSurah}',
+        //                           style: TextStyle(
+        //                             fontSize: 10,
+        //                             fontWeight: FontWeight.bold,
+        //                           ),
+        //                         ),
+        //                       ),
+        //                     ],
+        //                   ),
+        //                 ),
+        //               ),
+        //               Expanded(
+        //                 child: Container(
+        //                   margin: EdgeInsets.only(
+        //                     left: 10,
+        //                   ),
+        //                   child: Column(
+        //                     crossAxisAlignment: CrossAxisAlignment.end,
+        //                     children: [
+        //                       Text(
+        //                         '${detailSurahWithEng.value.dataAyahs[i].text}',
+        //                         textAlign: TextAlign.right,
+        //                         style: TextStyle(
+        //                           fontSize: 28,
+        //                         ),
+        //                       ),
+        //                       // Text(
+        //                       //   '${detailSurahWithEng.value.dataAyahsEng[i].text}',
+        //                       //   style: TextStyle(
+        //                       //     fontSize: 12,
+        //                       //   ),
+        //                       // ),
+        //                     ],
+        //                   ),
+        //                 ),
+        //               ),
+        //             ],
+        //           ),
+        //         );
+        //       },
+        //     ),
+        //   ),
+        // ],
       },
-    );
+    ).paddingAll(15);
   }
 }

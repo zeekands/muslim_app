@@ -160,6 +160,9 @@ class HomeController extends GetxController with StateMixin {
   void startTimer() {
     Timer.periodic(const Duration(seconds: 1), (timer) {
       prayerTimeObs.value = nextPrayerTimeString();
+      if (prayerTimeObs.value == "00:00:00") {
+        onInit();
+      }
     });
   }
 }
