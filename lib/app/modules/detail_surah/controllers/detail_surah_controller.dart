@@ -1,5 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:muslim_app/app/data/models/detail_surah_with_eng.dart';
 import 'package:muslim_app/app/data/providers/detail_surah_provider.dart';
@@ -105,11 +106,18 @@ class DetailSurahController extends GetxController with StateMixin {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Flexible(
-              child: SingleChildScrollView(
-                child: Text(
-                  data,
-                  textAlign: TextAlign.justify,
-                  style: const TextStyle(fontSize: 28),
+              child: Scrollbar(
+                thumbVisibility: true,
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: SingleChildScrollView(
+                    child: Text(
+                      data,
+                      textAlign: TextAlign.justify,
+                      style: TextStyle(
+                          fontSize: 28.sp, fontFamily: "uthmanic_hafs_ver09"),
+                    ),
+                  ),
                 ),
               ),
             ),

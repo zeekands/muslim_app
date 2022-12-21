@@ -16,7 +16,6 @@ class NavbarView extends GetView<NavbarController> {
       items: controller.navBarsItems(),
       confineInSafeArea: true,
       navBarHeight: 60.h,
-      padding: const NavBarPadding.all(10),
       backgroundColor: Colors.white, // Default is Colors.white.
       handleAndroidBackButtonPress: true, // Default is true.
       resizeToAvoidBottomInset:

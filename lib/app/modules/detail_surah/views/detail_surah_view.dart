@@ -69,7 +69,7 @@ class DetailSurahView extends GetView<DetailSurahController> {
                             fontSize: 25.sp, fontWeight: FontWeight.bold)),
                   ),
                 ],
-              ).paddingAll(20.r);
+              ).paddingOnly(left: 20.r, right: 20.r, top: 10.r);
             },
           );
         } else if (snapshot.hasError) {

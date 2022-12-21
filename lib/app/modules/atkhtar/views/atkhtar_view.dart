@@ -99,7 +99,8 @@ class AtkhtarView extends GetView<AtkhtarController> {
                     textAlign: TextAlign.right,
                     style: TextStyle(
                       fontSize: ScreenUtil().setSp(24),
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.normal,
+                      fontFamily: "uthmanic_hafs_ver09",
                     ),
                   ),
                   20.verticalSpace,

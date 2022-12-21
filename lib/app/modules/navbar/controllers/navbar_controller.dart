@@ -6,6 +6,8 @@ import 'package:muslim_app/app/modules/quran/views/quran_view.dart';
 import 'package:muslim_app/app/modules/salah_time/views/salah_time_view.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
+import '../../../utils/colors.dart';
+
 class NavbarController extends GetxController {
   PersistentTabController controller = PersistentTabController(initialIndex: 0);
 
@@ -20,24 +22,31 @@ class NavbarController extends GetxController {
   List<PersistentBottomNavBarItem> navBarsItems() {
     return [
       PersistentBottomNavBarItem(
-        icon: const Icon(CupertinoIcons.home),
+        icon: Image.asset(
+          'assets/icon/house.png',
+        ),
         title: ("Home"),
         iconSize: 20.r,
-        activeColorPrimary: CupertinoColors.activeGreen,
+        contentPadding: 0,
+        activeColorPrimary: green,
         inactiveColorPrimary: CupertinoColors.black,
       ),
       PersistentBottomNavBarItem(
-        icon: const Icon(CupertinoIcons.time),
+        icon: Image.asset(
+          'assets/icon/salah.png',
+        ),
         title: ("Prayers"),
         iconSize: 20.r,
-        activeColorPrimary: CupertinoColors.activeGreen,
+        activeColorPrimary: green,
         inactiveColorPrimary: CupertinoColors.black,
       ),
       PersistentBottomNavBarItem(
-        icon: const Icon(CupertinoIcons.book),
+        icon: Image.asset(
+          'assets/icon/quran.png',
+        ),
         title: ("Quran"),
         iconSize: 20.r,
-        activeColorPrimary: CupertinoColors.activeGreen,
+        activeColorPrimary: green,
         inactiveColorPrimary: CupertinoColors.black,
       ),
     ];

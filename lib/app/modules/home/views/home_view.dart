@@ -256,9 +256,10 @@ class HomeView extends GetView<HomeController> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(
-                            CupertinoIcons.hand_draw,
-                            size: 32.r,
+                          Image.asset(
+                            'assets/icon/quran.png',
+                            width: 32.w,
+                            height: 32.h,
                           ),
                           5.verticalSpace,
                           const Text("Doa")
@@ -270,9 +271,10 @@ class HomeView extends GetView<HomeController> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(
-                          Icons.room_preferences,
-                          size: 32.r,
+                        Image.asset(
+                          'assets/icon/praying.png',
+                          width: 32.w,
+                          height: 32.h,
                         ),
                         5.verticalSpace,
                         const Text("Tasbih")
