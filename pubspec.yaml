@@ -11,6 +11,7 @@ dependencies:
   flutter_screenutil: 5.5.3+2
   audioplayers: 0.20.1
   persistent_bottom_nav_bar: ^4.0.2
+  permission_handler: ^10.2.0
   flutter_qiblah: 2.0.2
   flutter_svg: 1.1.1+1
   hijri: ^3.0.0
@@ -19,6 +20,9 @@ dependencies:
   geocoding: 2.0.4
   quran: 1.1.2
   adhan: ^2.0.0-nullsafety.2
+  flutter_local_notifications: ^11.0.0
+  flutter_native_timezone: ^2.0.0
+  get_storage: 2.0.3
   flutter: 
     sdk: flutter
 

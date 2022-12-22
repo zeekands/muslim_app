@@ -141,27 +141,31 @@ class HomeController extends GetxController with StateMixin {
     var minutes = timeDifference.inMinutes - (hours * 60);
     var seconds = timeDifference.inSeconds - (hours * 3600) - (minutes * 60);
 
-    if (prayerNext == Prayer.fajr) {
-      return "0$hours:0$minutes:0$seconds";
-    } else {
-      if (hours < 10 && minutes < 10 && seconds < 10) {
-        return "0$hours:0$minutes:0$seconds";
-      } else if (hours < 10 && minutes < 10) {
-        return "0$hours:0$minutes:$seconds";
-      } else if (hours < 10 && seconds < 10) {
-        return "0$hours:$minutes:0$seconds";
-      } else if (minutes < 10 && seconds < 10) {
-        return "$hours:0$minutes:0$seconds";
-      } else if (hours < 10) {
-        return "0$hours:$minutes:$seconds";
-      } else if (minutes < 10) {
-        return "$hours:0$minutes:$seconds";
-      } else if (seconds < 10) {
-        return "$hours:$minutes:0$seconds";
-      } else {
-        return "$hours:$minutes:$seconds";
-      }
-    }
+    return timeDifference.inHours <= 9
+        ? "0" + timeDifference.toString().trim().substring(0, 7)
+        : timeDifference.toString().trim().substring(0, 7);
+
+    // if (prayerNext == Prayer.fajr) {
+    //   return timeDifference.toString().trim().substring(0, 7);
+    // } else {
+    //   if (hours < 10 && minutes < 10 && seconds < 10) {
+    //     return "0$hours:0$minutes:0$seconds";
+    //   } else if (hours < 10 && minutes < 10) {
+    //     return "0$hours:0$minutes:$seconds";
+    //   } else if (hours < 10 && seconds < 10) {
+    //     return "0$hours:$minutes:0$seconds";
+    //   } else if (minutes < 10 && seconds < 10) {
+    //     return "$hours:0$minutes:0$seconds";
+    //   } else if (hours < 10) {
+    //     return "0$hours:$minutes:$seconds";
+    //   } else if (minutes < 10) {
+    //     return "$hours:0$minutes:$seconds";
+    //   } else if (seconds < 10) {
+    //     return "$hours:$minutes:0$seconds";
+    //   } else {
+    //     return "$hours:$minutes:$seconds";
+    //   }
+    // }
   }
 
   void startTimer() {

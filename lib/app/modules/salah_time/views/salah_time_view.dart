@@ -1,7 +1,9 @@
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:muslim_app/app/utils/notification_api.dart';
 
 import '../../../utils/colors.dart';
 import '../controllers/salah_time_controller.dart';
@@ -104,6 +106,18 @@ class SalahTimeView extends GetView<SalahTimeController> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          Obx(() {
+                            return ListTile(
+                              title: const Text("Aktifkan Pengingat Shalat"),
+                              trailing: Switch(
+                                value: controller.isNotificationActive.value,
+                                activeColor: green,
+                                onChanged: (value) {
+                                  controller.adzanNotification();
+                                },
+                              ),
+                            );
+                          }),
                           ListTile(
                             title: Text(
                               'Subuh',
