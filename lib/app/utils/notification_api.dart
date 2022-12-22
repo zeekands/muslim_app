@@ -10,7 +10,16 @@ class NotifictionApi {
   }) async {
     const androidSettings =
         AndroidInitializationSettings('@mipmap/ic_launcher');
-    const settings = InitializationSettings(android: androidSettings);
+    const settings = InitializationSettings(
+        android: androidSettings,
+        iOS: DarwinInitializationSettings(
+          requestAlertPermission: true,
+          requestBadgePermission: true,
+          requestSoundPermission: true,
+          defaultPresentAlert: true,
+          defaultPresentBadge: true,
+          defaultPresentSound: true,
+        ));
 
     await _notificationss.initialize(
       settings,

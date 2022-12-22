@@ -23,7 +23,10 @@ class NavbarController extends GetxController {
     return [
       PersistentBottomNavBarItem(
         icon: Image.asset(
-          'assets/icon/house.png',
+          'assets/icon/home hijau.png',
+        ),
+        inactiveIcon: Image.asset(
+          'assets/icon/home.png',
         ),
         title: ("Home"),
         iconSize: 20.r,
@@ -33,7 +36,10 @@ class NavbarController extends GetxController {
       ),
       PersistentBottomNavBarItem(
         icon: Image.asset(
-          'assets/icon/salah.png',
+          'assets/icon/clock hijau.png',
+        ),
+        inactiveIcon: Image.asset(
+          'assets/icon/clock.png',
         ),
         title: ("Prayers"),
         iconSize: 20.r,
@@ -42,10 +48,14 @@ class NavbarController extends GetxController {
       ),
       PersistentBottomNavBarItem(
         icon: Image.asset(
+          'assets/icon/quran hijau.png',
+        ),
+        inactiveIcon: Image.asset(
           'assets/icon/quran.png',
         ),
         title: ("Quran"),
-        iconSize: 20.r,
+        iconSize: 20.w,
+        textStyle: TextStyle(fontSize: 12.sp),
         activeColorPrimary: green,
         inactiveColorPrimary: CupertinoColors.black,
       ),

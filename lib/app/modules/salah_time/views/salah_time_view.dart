@@ -109,7 +109,7 @@ class SalahTimeView extends GetView<SalahTimeController> {
                           Obx(() {
                             return ListTile(
                               title: const Text("Aktifkan Pengingat Shalat"),
-                              trailing: Switch(
+                              trailing: Switch.adaptive(
                                 value: controller.isNotificationActive.value,
                                 activeColor: green,
                                 onChanged: (value) {
