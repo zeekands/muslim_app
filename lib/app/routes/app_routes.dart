@@ -17,6 +17,8 @@ abstract class Routes {
   static const DOA_LIST = _Paths.DOA_LIST;
   static const DOA_LIST_DETAIL = _Paths.DOA_LIST_DETAIL;
   static const ASMAUL_HUSNA = _Paths.ASMAUL_HUSNA;
+  static const TARTILI = _Paths.TARTILI;
+  static const TARTILI_DETAIL = _Paths.TARTILI_DETAIL;
 }
 
 abstract class _Paths {
@@ -35,4 +37,6 @@ abstract class _Paths {
   static const DOA_LIST = '/doa-list';
   static const DOA_LIST_DETAIL = '/doa-list-detail';
   static const ASMAUL_HUSNA = '/asmaul-husna';
+  static const TARTILI = '/tartili';
+  static const TARTILI_DETAIL = '/tartili-detail';
 }

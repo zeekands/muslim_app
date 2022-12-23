@@ -33,30 +33,7 @@ class DoaListView extends GetView<DoaListController> {
                   height: 70.h,
                   child: Row(
                     children: [
-                      SizedBox(
-                        width: 32.w,
-                        height: 32.h,
-                        child: Stack(
-                          children: [
-                            Center(
-                              child: Image.asset(
-                                'assets/icon/ic_ayat.png',
-                                width: 32.h,
-                                height: 32.w,
-                              ),
-                            ),
-                            Center(
-                              child: Text(
-                                '${controller.doa.chapters?[index].chapterNo}',
-                                style: TextStyle(
-                                  fontSize: ScreenUtil().setSp(10),
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      const Icon(Icons.more_vert),
                       10.horizontalSpace,
                       Flexible(
                         child: Text(

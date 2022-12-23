@@ -84,6 +84,9 @@ class HomeView extends GetView<HomeController> {
               child: Container(
                 decoration: const BoxDecoration(
                   color: green,
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/background apk.png"),
+                      fit: BoxFit.fill),
                 ),
                 child: controller.obx(
                   (state) => SingleChildScrollView(
@@ -100,6 +103,9 @@ class HomeView extends GetView<HomeController> {
                             ),
                           ),
                         ).paddingOnly(top: 200.h),
+                        Image.asset(
+                          "assets/images/background apk.png",
+                        ),
                         Column(
                           children: [
                             timeCard(controller.prayerTimeString,
@@ -251,6 +257,7 @@ class HomeView extends GetView<HomeController> {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return GestureDetector(
+            onTap: () => Get.toNamed(controller.menu[index].routes),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [

@@ -12,6 +12,12 @@ class DoaView extends GetView<DoaController> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Doa'),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.search),
+          ),
+        ],
       ),
       body: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

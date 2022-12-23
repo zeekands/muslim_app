@@ -3,7 +3,7 @@
         {
             "name" : "Doa \nHarian",
             "image" : "assets/icon/quran hijau.png",
-            "routes" : "doa-harian"
+            "routes" : "/doa"
         },
         {
             "name" : "Al Quran \nTerjemahan",
@@ -12,7 +12,7 @@
         },{
             "name" : "Dizkir \nPagi Petang",
             "image" : "assets/icon/quran hijau.png",
-            "routes" : "doa-harian"
+            "routes" : "/atkhtar"
         },{
             "name" : "Kalender\nHijriyah",
             "image" : "assets/icon/quran hijau.png",
@@ -36,7 +36,7 @@
         },{
             "name" : "Tartili \nAl Irsyad",
             "image" : "assets/icon/quran hijau.png",
-            "routes" : "doa-harian"
+            "routes" : "/tartili"
         },{
             "name" : "Qiblat \nShalat",
             "image" : "assets/icon/quran hijau.png",

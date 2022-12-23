@@ -94,7 +94,7 @@ class AtkhtarView extends GetView<AtkhtarController> {
                     ),
                   ),
                   20.verticalSpace,
-                  Text(
+                  SelectableText(
                     "${controller.atkhtarMorning.elementAt(index).contentAr}",
                     textAlign: TextAlign.right,
                     style: TextStyle(
@@ -104,10 +104,21 @@ class AtkhtarView extends GetView<AtkhtarController> {
                     ),
                   ),
                   20.verticalSpace,
-                  Icon(
-                    Icons.volume_up,
-                    color: Colors.black,
-                    size: 30.r,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Icon(
+                        Icons.volume_up,
+                        color: Colors.black,
+                        size: 30.r,
+                      ),
+                      //TODO : add share function
+                      Icon(
+                        Icons.share_rounded,
+                        color: Colors.black,
+                        size: 30.r,
+                      ),
+                    ],
                   ),
                   20.verticalSpace,
                   Text(
@@ -153,7 +164,7 @@ class AtkhtarView extends GetView<AtkhtarController> {
                     ),
                   ),
                   20.verticalSpace,
-                  Text(
+                  SelectableText(
                     "${controller.atkhtars.elementAt(index).contentAr}",
                     textAlign: TextAlign.right,
                     style: TextStyle(
@@ -162,10 +173,21 @@ class AtkhtarView extends GetView<AtkhtarController> {
                     ),
                   ),
                   20.verticalSpace,
-                  Icon(
-                    Icons.volume_up,
-                    color: Colors.black,
-                    size: 30.r,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Icon(
+                        Icons.volume_up,
+                        color: Colors.black,
+                        size: 30.r,
+                      ),
+                      //TODO : add share function
+                      Icon(
+                        Icons.share_rounded,
+                        color: Colors.black,
+                        size: 30.r,
+                      ),
+                    ],
                   ),
                   20.verticalSpace,
                   Text(

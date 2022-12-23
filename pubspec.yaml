@@ -23,10 +23,11 @@ dependencies:
   flutter_local_notifications: ^11.0.0
   flutter_native_timezone: ^2.0.0
   get_storage: 2.0.3
-  flutter: 
-    sdk: flutter
   firebase_core: ^2.4.0
   cloud_firestore: ^4.3.0
+  cached_network_image: 3.2.3
+  flutter: 
+    sdk: flutter
 
 dev_dependencies: 
   flutter_lints: ^1.0.4
@@ -40,10 +41,9 @@ flutter:
     - assets/images/
     - assets/json/
     - assets/fonts/
-  
-  fonts:
+  fonts: 
     - family: UthmanicHafs
-      fonts:
+      fonts: 
         - asset: assets/fonts/uthmanic_hafs_ver09.otf
   uses-material-design: true
 

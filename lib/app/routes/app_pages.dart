@@ -26,6 +26,10 @@ import '../modules/salah_time/bindings/salah_time_binding.dart';
 import '../modules/salah_time/views/salah_time_view.dart';
 import '../modules/tab_bar/bindings/tab_bar_binding.dart';
 import '../modules/tab_bar/views/tab_bar_view.dart';
+import '../modules/tartili/bindings/tartili_binding.dart';
+import '../modules/tartili/views/tartili_view.dart';
+import '../modules/tartili_detail/bindings/tartili_detail_binding.dart';
+import '../modules/tartili_detail/views/tartili_detail_view.dart';
 
 part 'app_routes.dart';
 
@@ -99,6 +103,16 @@ class AppPages {
       name: _Paths.ASMAUL_HUSNA,
       page: () => const AsmaulHusnaView(),
       binding: AsmaulHusnaBinding(),
+    ),
+    GetPage(
+      name: _Paths.TARTILI,
+      page: () => const TartiliView(),
+      binding: TartiliBinding(),
+    ),
+    GetPage(
+      name: _Paths.TARTILI_DETAIL,
+      page: () => const TartiliDetailView(),
+      binding: TartiliDetailBinding(),
     ),
   ];
 }
