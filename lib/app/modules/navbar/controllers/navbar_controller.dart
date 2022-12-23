@@ -52,9 +52,11 @@ class NavbarController extends GetxController {
         ),
         inactiveIcon: Image.asset(
           'assets/icon/quran.png',
+          height: 32.h,
+          width: 32.w,
         ),
         title: ("Quran"),
-        iconSize: 20.w,
+        iconSize: 0.r,
         textStyle: TextStyle(fontSize: 12.sp),
         activeColorPrimary: green,
         inactiveColorPrimary: CupertinoColors.black,

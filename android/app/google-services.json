@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "671915168478",
+    "project_id": "muslimapp-da8fc",
+    "storage_bucket": "muslimapp-da8fc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:671915168478:android:fb8f5d981ca813f421684f",
+        "android_client_info": {
+          "package_name": "com.zeekands.muslim_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "671915168478-f48uivuce8bj1bslm80oc6qksv33vved.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-MpO0I_4SZipR1nMsu3yyPWkzn2-4GaA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "671915168478-f48uivuce8bj1bslm80oc6qksv33vved.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -136,14 +136,23 @@ class HomeController extends GetxController with StateMixin {
     var timeNow = DateTime.now();
     var nextPrayerTime = prayerTimes.timeForPrayer(prayerNext);
 
-    var timeDifference = nextPrayerTime!.difference(timeNow);
+    Duration timeDifference = nextPrayerTime!.difference(timeNow);
     var hours = timeDifference.inHours;
     var minutes = timeDifference.inMinutes - (hours * 60);
     var seconds = timeDifference.inSeconds - (hours * 3600) - (minutes * 60);
 
-    return timeDifference.inHours <= 9
-        ? "0" + timeDifference.toString().trim().substring(0, 7)
-        : timeDifference.toString().trim().substring(0, 7);
+    if (timeDifference.isNegative) {
+      timeDifference = timeDifference + const Duration(days: 1);
+      return timeDifference.toString().trim().substring(0, 7);
+
+      //print("negative");
+    } else {
+      return timeDifference.toString().trim().substring(0, 8);
+    }
+
+    // return timeDifference.inHours <= 9
+    //     ? "0" + timeDifference.toString().trim().substring(0, 8 )
+    //     : timeDifference.toString().trim().substring(0, 8);
 
     // if (prayerNext == Prayer.fajr) {
     //   return timeDifference.toString().trim().substring(0, 7);

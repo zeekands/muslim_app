@@ -66,7 +66,9 @@ class DetailSurahView extends GetView<DetailSurahController> {
                     child: Text(snapshot.data!.dataAyahs[index].text.toString(),
                         textAlign: TextAlign.right,
                         style: TextStyle(
-                            fontSize: 25.sp, fontWeight: FontWeight.bold)),
+                            fontSize: 25.sp,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'uthmanic_hafs_ver09')),
                   ),
                 ],
               ).paddingOnly(left: 20.r, right: 20.r, top: 10.r);

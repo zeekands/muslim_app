@@ -115,7 +115,7 @@ class DetailSurahController extends GetxController with StateMixin {
                       data,
                       textAlign: TextAlign.justify,
                       style: TextStyle(
-                          fontSize: 28.sp, fontFamily: "uthmanic_hafs_ver09"),
+                          fontSize: 28.sp, fontFamily: "UthmanicHafs"),
                     ),
                   ),
                 ),

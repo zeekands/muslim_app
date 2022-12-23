@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:muslim_app/app/routes/app_pages.dart';
 import 'package:muslim_app/app/utils/colors.dart';
+import 'package:muslim_app/app/utils/text.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -243,12 +244,12 @@ class HomeView extends GetView<HomeController> {
         scrollDirection: Axis.horizontal,
         child: Row(
           children: [
-            40.horizontalSpace,
+            20.horizontalSpace,
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     GestureDetector(
                       onTap: () => Get.toNamed(Routes.DOA),
@@ -257,12 +258,15 @@ class HomeView extends GetView<HomeController> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image.asset(
-                            'assets/icon/quran.png',
-                            width: 32.w,
-                            height: 32.h,
+                            'assets/icon/quran hijau.png',
+                            width: 24.w,
+                            height: 24.h,
                           ),
                           5.verticalSpace,
-                          const Text("Doa")
+                          TextRegular(
+                            text: "Doa\nHarian",
+                            fontSize: 10.sp,
+                          ),
                         ],
                       ),
                     ),
@@ -273,11 +277,11 @@ class HomeView extends GetView<HomeController> {
                       children: [
                         Image.asset(
                           'assets/icon/praying.png',
-                          width: 32.w,
-                          height: 32.h,
+                          width: 24.w,
+                          height: 24.h,
                         ),
                         5.verticalSpace,
-                        const Text("Tasbih")
+                        const TextRegular(text: "Dzikir \nPetang")
                       ],
                     ),
                     25.horizontalSpace,
@@ -287,12 +291,13 @@ class HomeView extends GetView<HomeController> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(
-                            CupertinoIcons.hand_raised_fill,
-                            size: 32.r,
+                          Image.asset(
+                            'assets/icon/praying.png',
+                            width: 24.w,
+                            height: 24.h,
                           ),
                           5.verticalSpace,
-                          const Text("Akhtar")
+                          const TextRegular(text: "Tartili \nAudio")
                         ],
                       ),
                     ),
@@ -303,12 +308,13 @@ class HomeView extends GetView<HomeController> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(
-                            CupertinoIcons.compass,
-                            size: 32.r,
+                          Image.asset(
+                            'assets/icon/praying.png',
+                            width: 24.w,
+                            height: 24.h,
                           ),
                           5.verticalSpace,
-                          const Text("Qibla")
+                          const TextRegular(text: "Tartili \nNo Audio")
                         ],
                       ),
                     ),
@@ -317,19 +323,20 @@ class HomeView extends GetView<HomeController> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(
-                          CupertinoIcons.calendar,
-                          size: 32.r,
+                        Image.asset(
+                          'assets/icon/praying.png',
+                          width: 24.w,
+                          height: 24.h,
                         ),
                         5.verticalSpace,
-                        const Text("Calendar")
+                        const TextRegular(text: "Khadist \nTKIT")
                       ],
                     ),
                   ],
                 ),
                 20.verticalSpace,
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     GestureDetector(
                       onTap: () => Get.toNamed(Routes.DOA),
@@ -337,12 +344,16 @@ class HomeView extends GetView<HomeController> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(
-                            CupertinoIcons.hand_draw,
-                            size: 32.r,
+                          Image.asset(
+                            'assets/icon/quran hijau.png',
+                            width: 24.w,
+                            height: 24.h,
                           ),
                           5.verticalSpace,
-                          const Text("Doa")
+                          TextRegular(
+                            text: "Hadist \nSMPIT",
+                            fontSize: 10.sp,
+                          ),
                         ],
                       ),
                     ),
@@ -351,12 +362,13 @@ class HomeView extends GetView<HomeController> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(
-                          Icons.room_preferences,
-                          size: 32.r,
+                        Image.asset(
+                          'assets/icon/praying.png',
+                          width: 24.w,
+                          height: 24.h,
                         ),
                         5.verticalSpace,
-                        const Text("Tasbih")
+                        const TextRegular(text: "Hadist\n SMAIT")
                       ],
                     ),
                     25.horizontalSpace,
@@ -366,12 +378,13 @@ class HomeView extends GetView<HomeController> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(
-                            CupertinoIcons.hand_raised_fill,
-                            size: 32.r,
+                          Image.asset(
+                            'assets/icon/praying.png',
+                            width: 24.w,
+                            height: 24.h,
                           ),
                           5.verticalSpace,
-                          const Text("Akhtar")
+                          const TextRegular(text: "Al Quran \nHalaman")
                         ],
                       ),
                     ),
@@ -382,12 +395,13 @@ class HomeView extends GetView<HomeController> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(
-                            CupertinoIcons.compass,
-                            size: 32.r,
+                          Image.asset(
+                            'assets/icon/praying.png',
+                            width: 24.w,
+                            height: 24.h,
                           ),
                           5.verticalSpace,
-                          const Text("Qibla")
+                          const TextRegular(text: "Dzikir \nBada Sholat ")
                         ],
                       ),
                     ),
@@ -396,12 +410,13 @@ class HomeView extends GetView<HomeController> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(
-                          CupertinoIcons.calendar,
-                          size: 32.r,
+                        Image.asset(
+                          'assets/icon/praying.png',
+                          width: 24.w,
+                          height: 24.h,
                         ),
                         5.verticalSpace,
-                        const Text("Calendar")
+                        const TextRegular(text: "Tutorial \n  Ibadah")
                       ],
                     ),
                   ],

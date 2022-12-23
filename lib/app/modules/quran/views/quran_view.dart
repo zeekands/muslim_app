@@ -127,9 +127,9 @@ class QuranView extends GetView<QuranController> {
                             '${snapshot.data![index].name}',
                             textAlign: TextAlign.right,
                             style: TextStyle(
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.bold,
-                            ),
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: "UthmanicHafs"),
                           ),
                         ),
                       ],
