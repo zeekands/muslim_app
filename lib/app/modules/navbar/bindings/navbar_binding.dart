@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:muslim_app/app/modules/asmaul_husna/controllers/asmaul_husna_controller.dart';
 import 'package:muslim_app/app/modules/home/controllers/home_controller.dart';
 import 'package:muslim_app/app/modules/quran/controllers/quran_controller.dart';
 import 'package:muslim_app/app/modules/salah_time/controllers/salah_time_controller.dart';
@@ -18,5 +19,6 @@ class NavbarBinding extends Bindings {
       () => SalahTimeController(),
     );
     Get.lazyPut(() => QuranController());
+    Get.lazyPut(() => AsmaulHusnaController());
   }
 }

@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/asmaul_husna/bindings/asmaul_husna_binding.dart';
+import '../modules/asmaul_husna/views/asmaul_husna_view.dart';
 import '../modules/atkhtar/bindings/atkhtar_binding.dart';
 import '../modules/atkhtar/views/atkhtar_view.dart';
 import '../modules/detail_surah/bindings/detail_surah_binding.dart';
@@ -92,6 +94,11 @@ class AppPages {
       name: _Paths.DOA_LIST_DETAIL,
       page: () => const DoaListDetailView(),
       binding: DoaListDetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.ASMAUL_HUSNA,
+      page: () => const AsmaulHusnaView(),
+      binding: AsmaulHusnaBinding(),
     ),
   ];
 }

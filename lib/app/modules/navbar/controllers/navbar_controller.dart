@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:muslim_app/app/data/models/asmaul_husna_model.dart';
+import 'package:muslim_app/app/modules/asmaul_husna/views/asmaul_husna_view.dart';
 import 'package:muslim_app/app/modules/home/views/home_view.dart';
 import 'package:muslim_app/app/modules/quran/views/quran_view.dart';
 import 'package:muslim_app/app/modules/salah_time/views/salah_time_view.dart';
@@ -14,6 +16,7 @@ class NavbarController extends GetxController {
   List<Widget> buildScreens() {
     return [
       const HomeView(),
+      const AsmaulHusnaView(),
       const SalahTimeView(),
       const QuranView(),
     ];
@@ -31,6 +34,18 @@ class NavbarController extends GetxController {
         title: ("Home"),
         iconSize: 20.r,
         contentPadding: 0,
+        activeColorPrimary: green,
+        inactiveColorPrimary: CupertinoColors.black,
+      ),
+      PersistentBottomNavBarItem(
+        icon: Image.asset(
+          'assets/icon/ramadan.png',
+        ),
+        inactiveIcon: Image.asset(
+          'assets/icon/ramadan.png',
+        ),
+        title: ("Asmaul Husna"),
+        iconSize: 20.r,
         activeColorPrimary: green,
         inactiveColorPrimary: CupertinoColors.black,
       ),

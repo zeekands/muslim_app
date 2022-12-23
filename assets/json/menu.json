@@ -1,0 +1,54 @@
+{
+    "menu" : [
+        {
+            "name" : "Doa \nHarian",
+            "image" : "assets/icon/quran hijau.png",
+            "routes" : "doa-harian"
+        },
+        {
+            "name" : "Al Quran \nTerjemahan",
+            "image" : "assets/icon/quran hijau.png",
+            "routes" : "doa-harian"
+        },{
+            "name" : "Dizkir \nPagi Petang",
+            "image" : "assets/icon/quran hijau.png",
+            "routes" : "doa-harian"
+        },{
+            "name" : "Kalender\nHijriyah",
+            "image" : "assets/icon/quran hijau.png",
+            "routes" : "doa-harian"
+        },{
+            "name" : "Dzikir \nBada Sholat",
+            "image" : "assets/icon/quran hijau.png",
+            "routes" : "doa-harian"
+        },{
+            "name" : "Hadist",
+            "image" : "assets/icon/quran hijau.png",
+            "routes" : "doa-harian"
+        },{
+            "name" : "Qiblat \nShalat",
+            "image" : "assets/icon/quran hijau.png",
+            "routes" : "doa-harian"
+        },{
+            "name" : "Tutorial Ibadah",
+            "image" : "assets/icon/quran hijau.png",
+            "routes" : "doa-harian"
+        },{
+            "name" : "Tartili \nAl Irsyad",
+            "image" : "assets/icon/quran hijau.png",
+            "routes" : "doa-harian"
+        },{
+            "name" : "Qiblat \nShalat",
+            "image" : "assets/icon/quran hijau.png",
+            "routes" : "doa-harian"
+        },{
+            "name" : "Doa Harian",
+            "image" : "assets/icon/quran hijau.png",
+            "routes" : "doa-harian"
+        },{
+            "name" : "Doa Harian",
+            "image" : "assets/icon/quran hijau.png",
+            "routes" : "doa-harian"
+        }
+    ]
+}

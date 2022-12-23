@@ -8,9 +8,11 @@ import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:hijri/hijri_calendar.dart';
 import 'package:muslim_app/app/data/models/asmaul_husna_model.dart';
+import 'package:muslim_app/app/data/models/menu_model.dart';
 
 class HomeController extends GetxController with StateMixin {
   var asmaulHusna = AsmaulHusna();
+  var menu = [];
   final todayHijri = HijriCalendar.now();
   final today = DateTime.now();
   var myCoordinates = Coordinates(0, 0);
@@ -70,6 +72,8 @@ class HomeController extends GetxController with StateMixin {
     placemarks =
         await placemarkFromCoordinates(position.latitude, position.longitude);
     await loadPrayerTimes();
+    await loadMenu();
+    print(menu.length);
     change(asmaulHusna, status: RxStatus.success());
   }
 
@@ -147,34 +151,8 @@ class HomeController extends GetxController with StateMixin {
 
       //print("negative");
     } else {
-      return timeDifference.toString().trim().substring(0, 8);
+      return timeDifference.toString().trim().substring(0, 7);
     }
-
-    // return timeDifference.inHours <= 9
-    //     ? "0" + timeDifference.toString().trim().substring(0, 8 )
-    //     : timeDifference.toString().trim().substring(0, 8);
-
-    // if (prayerNext == Prayer.fajr) {
-    //   return timeDifference.toString().trim().substring(0, 7);
-    // } else {
-    //   if (hours < 10 && minutes < 10 && seconds < 10) {
-    //     return "0$hours:0$minutes:0$seconds";
-    //   } else if (hours < 10 && minutes < 10) {
-    //     return "0$hours:0$minutes:$seconds";
-    //   } else if (hours < 10 && seconds < 10) {
-    //     return "0$hours:$minutes:0$seconds";
-    //   } else if (minutes < 10 && seconds < 10) {
-    //     return "$hours:0$minutes:0$seconds";
-    //   } else if (hours < 10) {
-    //     return "0$hours:$minutes:$seconds";
-    //   } else if (minutes < 10) {
-    //     return "$hours:0$minutes:$seconds";
-    //   } else if (seconds < 10) {
-    //     return "$hours:$minutes:0$seconds";
-    //   } else {
-    //     return "$hours:$minutes:$seconds";
-    //   }
-    // }
   }
 
   void startTimer() {
@@ -184,5 +162,14 @@ class HomeController extends GetxController with StateMixin {
         onInit();
       }
     });
+  }
+
+  Future<void> loadMenu() async {
+    change(null, status: RxStatus.loading());
+    menu = MenuModel.fromJson(
+            jsonDecode(await rootBundle.loadString('assets/json/menu.json')))
+        .menu as List<Menu>;
+
+    change(menu, status: RxStatus.success());
   }
 }
