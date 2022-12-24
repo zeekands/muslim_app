@@ -14,7 +14,12 @@ class DoaView extends GetView<DoaController> {
         title: const Text('Doa'),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              showSearch(
+                context: context,
+                delegate: DoaSearchDelegate(controller.listChapters),
+              );
+            },
             icon: const Icon(Icons.search),
           ),
         ],
