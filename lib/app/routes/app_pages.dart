@@ -1,17 +1,23 @@
 import 'package:get/get.dart';
 
+import '../modules/about/bindings/about_binding.dart';
+import '../modules/about/views/about_view.dart';
 import '../modules/asmaul_husna/bindings/asmaul_husna_binding.dart';
 import '../modules/asmaul_husna/views/asmaul_husna_view.dart';
 import '../modules/atkhtar/bindings/atkhtar_binding.dart';
 import '../modules/atkhtar/views/atkhtar_view.dart';
 import '../modules/detail_surah/bindings/detail_surah_binding.dart';
 import '../modules/detail_surah/views/detail_surah_view.dart';
+import '../modules/detail_surah_list/bindings/detail_surah_list_binding.dart';
+import '../modules/detail_surah_list/views/detail_surah_list_view.dart';
 import '../modules/doa/bindings/doa_binding.dart';
 import '../modules/doa/views/doa_view.dart';
 import '../modules/doa_list/bindings/doa_list_binding.dart';
 import '../modules/doa_list/views/doa_list_view.dart';
 import '../modules/doa_list_detail/bindings/doa_list_detail_binding.dart';
 import '../modules/doa_list_detail/views/doa_list_detail_view.dart';
+import '../modules/feedback/bindings/feedback_binding.dart';
+import '../modules/feedback/views/feedback_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/juz_surah/bindings/juz_surah_binding.dart';
@@ -113,6 +119,21 @@ class AppPages {
       name: _Paths.TARTILI_DETAIL,
       page: () => const TartiliDetailView(),
       binding: TartiliDetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.FEEDBACK,
+      page: () => const FeedbackView(),
+      binding: FeedbackBinding(),
+    ),
+    GetPage(
+      name: _Paths.ABOUT,
+      page: () => const AboutView(),
+      binding: AboutBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAIL_SURAH_LIST,
+      page: () => const DetailSurahListView(),
+      binding: DetailSurahListBinding(),
     ),
   ];
 }

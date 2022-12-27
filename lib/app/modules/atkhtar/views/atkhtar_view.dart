@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:muslim_app/app/utils/colors.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../controllers/atkhtar_controller.dart';
 
@@ -113,10 +114,16 @@ class AtkhtarView extends GetView<AtkhtarController> {
                         size: 30.r,
                       ),
                       //TODO : add share function
-                      Icon(
-                        Icons.share_rounded,
-                        color: Colors.black,
-                        size: 30.r,
+                      IconButton(
+                        onPressed: () {
+                          Share.share(
+                              controller.atkhtars.elementAt(index).contentAr);
+                        },
+                        icon: Icon(
+                          Icons.share_rounded,
+                          color: Colors.black,
+                          size: 30.r,
+                        ),
                       ),
                     ],
                   ),
@@ -168,9 +175,8 @@ class AtkhtarView extends GetView<AtkhtarController> {
                     "${controller.atkhtars.elementAt(index).contentAr}",
                     textAlign: TextAlign.right,
                     style: TextStyle(
-                      fontSize: ScreenUtil().setSp(24),
-                      fontWeight: FontWeight.bold,
-                    ),
+                        fontSize: ScreenUtil().setSp(24),
+                        fontFamily: "uthmanic_hafs_ver09"),
                   ),
                   20.verticalSpace,
                   Row(
@@ -182,10 +188,16 @@ class AtkhtarView extends GetView<AtkhtarController> {
                         size: 30.r,
                       ),
                       //TODO : add share function
-                      Icon(
-                        Icons.share_rounded,
-                        color: Colors.black,
-                        size: 30.r,
+                      IconButton(
+                        onPressed: () {
+                          Share.share(
+                              controller.atkhtars.elementAt(index).contentAr);
+                        },
+                        icon: Icon(
+                          Icons.share_rounded,
+                          color: Colors.black,
+                          size: 30.r,
+                        ),
                       ),
                     ],
                   ),

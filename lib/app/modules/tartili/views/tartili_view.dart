@@ -1,10 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:muslim_app/app/routes/app_pages.dart';
 
+import '../../../utils/colors.dart';
 import '../controllers/tartili_controller.dart';
 
 class TartiliView extends GetView<TartiliController> {
@@ -24,7 +26,47 @@ class TartiliView extends GetView<TartiliController> {
               itemBuilder: (context, index) {
                 return GestureDetector(
                   onTap: () {
-                    Get.toNamed(Routes.TARTILI_DETAIL, arguments: index);
+                    showCupertinoModalPopup(
+                      context: context,
+                      builder: (BuildContext context) => CupertinoActionSheet(
+                        title: const Text('Pilih Jenis Tartili'),
+                        message: const Text('Your options are '),
+                        cancelButton: CupertinoActionSheetAction(
+                          child: const Text('Cancel',
+                              style: TextStyle(color: Colors.red)),
+                          isDefaultAction: true,
+                          onPressed: () {
+                            Navigator.pop(context, 'Cancel');
+                          },
+                        ),
+                        actions: <Widget>[
+                          CupertinoActionSheetAction(
+                            child: const Text('Tartili Audio',
+                                style: TextStyle(color: green)),
+                            onPressed: () {
+                              Get.back();
+                              Get.snackbar(
+                                "Under Development",
+                                "Fitur ini sedang dalam tahap pengembangan",
+                                snackPosition: SnackPosition.BOTTOM,
+                                backgroundColor: Colors.orange,
+                                colorText: Colors.white,
+                                margin: const EdgeInsets.all(10),
+                              );
+                            },
+                          ),
+                          CupertinoActionSheetAction(
+                            child: const Text('Tartili Non Audio',
+                                style: TextStyle(color: green)),
+                            onPressed: () {
+                              Get.back();
+                              Get.toNamed(Routes.TARTILI_DETAIL,
+                                  arguments: index);
+                            },
+                          )
+                        ],
+                      ),
+                    );
                   },
                   child: Card(
                     elevation: 0,

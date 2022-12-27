@@ -53,8 +53,7 @@ class SalahTimeView extends GetView<SalahTimeController> {
                         ),
                         10.horizontalSpace,
                         Text(
-                          controller.placemarks.first.subAdministrativeArea ??
-                              '',
+                          controller.placemarks.first.locality ?? '',
                           style: TextStyle(
                             fontSize: ScreenUtil().setSp(14),
                             color: Colors.white,
@@ -137,9 +136,13 @@ class SalahTimeView extends GetView<SalahTimeController> {
                               Icons.notifications_active_outlined,
                               size: 20.sp,
                             ),
-                            leading: Icon(
-                              Icons.access_time_outlined,
-                              size: 20.sp,
+                            leading: Container(
+                              width: 30.w,
+                              alignment: Alignment.center,
+                              child: Icon(
+                                Icons.access_time_outlined,
+                                size: 20.sp,
+                              ),
                             ),
                           ),
                           Divider(
@@ -165,9 +168,13 @@ class SalahTimeView extends GetView<SalahTimeController> {
                               Icons.notifications_active_outlined,
                               size: 20.sp,
                             ),
-                            leading: Icon(
-                              Icons.access_time_outlined,
-                              size: 20.sp,
+                            leading: Container(
+                              width: 30.w,
+                              alignment: Alignment.center,
+                              child: Icon(
+                                Icons.access_time_outlined,
+                                size: 20.sp,
+                              ),
                             ),
                           ),
                           Divider(
@@ -193,9 +200,13 @@ class SalahTimeView extends GetView<SalahTimeController> {
                               Icons.notifications_active_outlined,
                               size: 20.sp,
                             ),
-                            leading: Icon(
-                              Icons.access_time_outlined,
-                              size: 20.sp,
+                            leading: Container(
+                              width: 30.w,
+                              alignment: Alignment.center,
+                              child: Icon(
+                                Icons.access_time_outlined,
+                                size: 20.sp,
+                              ),
                             ),
                           ),
                           Divider(
@@ -221,9 +232,13 @@ class SalahTimeView extends GetView<SalahTimeController> {
                               Icons.notifications_active_outlined,
                               size: 20.sp,
                             ),
-                            leading: Icon(
-                              Icons.access_time_outlined,
-                              size: 20.sp,
+                            leading: Container(
+                              width: 30.w,
+                              alignment: Alignment.center,
+                              child: Icon(
+                                Icons.access_time_outlined,
+                                size: 20.sp,
+                              ),
                             ),
                           ),
                           Divider(
@@ -249,9 +264,13 @@ class SalahTimeView extends GetView<SalahTimeController> {
                               Icons.notifications_active_outlined,
                               size: 20.sp,
                             ),
-                            leading: Icon(
-                              Icons.access_time_outlined,
-                              size: 20.sp,
+                            leading: Container(
+                              width: 30.w,
+                              alignment: Alignment.center,
+                              child: Icon(
+                                Icons.access_time_outlined,
+                                size: 20.sp,
+                              ),
                             ),
                           ),
                         ],

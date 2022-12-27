@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -47,110 +48,151 @@ class QuranView extends GetView<QuranController> {
   }
 
   Widget buildSurah() {
-    return FutureBuilder<List<Data>>(
-      future: controller.loadSurah(),
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          return ListView.builder(
-            itemCount: snapshot.data!.length,
-            itemBuilder: (context, index) {
-              return Card(
-                elevation: 0,
-                child: GestureDetector(
-                  onTap: () {
-                    Get.toNamed(
-                      Routes.DETAIL_SURAH,
-                      arguments: [
-                        snapshot.data![index].number,
-                        snapshot.data![index].englishName
-                      ],
-                    );
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.r),
-                      color: Colors.white,
-                    ),
-                    width: 1.sw,
-                    height: 70.h,
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 32.w,
-                          height: 32.h,
-                          child: Stack(
-                            children: [
-                              Center(
-                                child: Image.asset(
-                                  'assets/icon/ic_ayat.png',
-                                  width: 32.h,
-                                  height: 32.w,
-                                ),
-                              ),
-                              Center(
-                                child: Text(
-                                  '${snapshot.data![index].number}',
-                                  style: TextStyle(
-                                    fontSize: ScreenUtil().setSp(10),
-                                    fontWeight: FontWeight.bold,
+    return RefreshIndicator(
+      onRefresh: () async {
+        await controller.loadSurah();
+      },
+      child: FutureBuilder<List<Data>>(
+        future: controller.loadSurah(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return ListView.builder(
+              itemCount: snapshot.data!.length,
+              itemBuilder: (context, index) {
+                return Card(
+                  elevation: 0,
+                  child: GestureDetector(
+                    onTap: () {
+                      showCupertinoModalPopup(
+                        context: context,
+                        builder: (BuildContext context) => CupertinoActionSheet(
+                          title: const Text('Pilih Tipe Al-Quran'),
+                          message: const Text('Your options are '),
+                          cancelButton: CupertinoActionSheetAction(
+                            child: const Text('Cancel',
+                                style: TextStyle(color: Colors.red)),
+                            isDefaultAction: true,
+                            onPressed: () {
+                              Navigator.pop(context, 'Cancel');
+                            },
+                          ),
+                          actions: <Widget>[
+                            CupertinoActionSheetAction(
+                              child: const Text('Al-Quran Per Ayat',
+                                  style: TextStyle(color: green)),
+                              onPressed: () {
+                                Get.back();
+                                Get.toNamed(
+                                  Routes.DETAIL_SURAH_LIST,
+                                  arguments: [
+                                    snapshot.data![index].number,
+                                    snapshot.data![index].englishName
+                                  ],
+                                );
+                              },
+                            ),
+                            CupertinoActionSheetAction(
+                              child: const Text('Al-Quran Per Halaman',
+                                  style: TextStyle(color: green)),
+                              onPressed: () {
+                                Get.back();
+                                Get.toNamed(
+                                  Routes.DETAIL_SURAH,
+                                  arguments: [
+                                    snapshot.data![index].number,
+                                    snapshot.data![index].englishName
+                                  ],
+                                );
+                              },
+                            )
+                          ],
+                        ),
+                      );
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.r),
+                        color: Colors.white,
+                      ),
+                      width: 1.sw,
+                      height: 70.h,
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 32.w,
+                            height: 32.h,
+                            child: Stack(
+                              children: [
+                                Center(
+                                  child: Image.asset(
+                                    'assets/icon/ic_ayat.png',
+                                    width: 32.h,
+                                    height: 32.w,
                                   ),
+                                ),
+                                Center(
+                                  child: Text(
+                                    '${snapshot.data![index].number}',
+                                    style: TextStyle(
+                                      fontSize: ScreenUtil().setSp(10),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          10.horizontalSpace,
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '${snapshot.data![index].englishName}',
+                                style: TextStyle(
+                                    fontSize: 13.sp,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              5.verticalSpace,
+                              Text(
+                                '${snapshot.data![index].revelationType} ${snapshot.data![index].numberOfAyahs} Ayat',
+                                style: TextStyle(
+                                  fontSize: 11.sp,
+                                  color: Colors.grey[500],
                                 ),
                               ),
                             ],
                           ),
-                        ),
-                        10.horizontalSpace,
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              '${snapshot.data![index].englishName}',
-                              style: TextStyle(
-                                  fontSize: 13.sp, fontWeight: FontWeight.bold),
-                            ),
-                            5.verticalSpace,
-                            Text(
-                              '${snapshot.data![index].revelationType} ${snapshot.data![index].numberOfAyahs} Ayat',
-                              style: TextStyle(
-                                fontSize: 11.sp,
-                                color: Colors.grey[500],
-                              ),
-                            ),
-                          ],
-                        ),
-                        const Spacer(),
-                        SizedBox(
-                          width: 100.w,
-                          child: Text(
-                            '${snapshot.data![index].name}',
-                            textAlign: TextAlign.right,
-                            style: TextStyle(
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: "UthmanicHafs"),
+                          const Spacer(),
+                          SizedBox(
+                            width: 100.w,
+                            child: Text('${snapshot.data![index].name}',
+                                textAlign: TextAlign.right,
+                                style: TextStyle(
+                                    fontSize: 16.sp,
+                                    fontFamily: "uthmanic_hafs_ver09")),
                           ),
-                        ),
-                      ],
-                    ),
-                  ).paddingSymmetric(horizontal: 20.w),
-                ),
-              ).paddingSymmetric(
-                horizontal: 10.w,
-              );
-            },
-          ).paddingOnly(top: 10.h);
-        } else if (snapshot.hasError) {
-          return Center(
-            child: Text(snapshot.error.toString()),
-          );
-        } else {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
-        }
-      },
+                        ],
+                      ),
+                    ).paddingSymmetric(horizontal: 20.w),
+                  ),
+                ).paddingSymmetric(
+                  horizontal: 10.w,
+                );
+              },
+            ).paddingOnly(top: 10.h);
+          } else if (snapshot.hasError) {
+            return const Center(
+                child: Text(
+                    "Terjadi kesalahan saat memuat data, silahkan coba lagi"));
+          } else {
+            return const Center(
+              child: CircularProgressIndicator.adaptive(),
+            );
+          }
+        },
+      ),
     );
   }
 

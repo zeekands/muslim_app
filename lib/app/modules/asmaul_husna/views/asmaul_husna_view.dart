@@ -25,7 +25,7 @@ class AsmaulHusnaView extends GetView<AsmaulHusnaController> {
                   minLeadingWidth: 0,
                   leading: Container(
                     height: double.infinity,
-                    width: 10,
+                    width: 15,
                     alignment: Alignment.center,
                     child: TextRegular(
                       text: "${index + 1}",

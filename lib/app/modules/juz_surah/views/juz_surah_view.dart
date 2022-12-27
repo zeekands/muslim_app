@@ -45,8 +45,9 @@ class JuzSurahView extends GetView<JuzSurahController> {
                                     "${snapshot.data!.dataAyahs[index].text}",
                                     textAlign: TextAlign.right,
                                     style: TextStyle(
-                                        fontSize: 25.sp,
-                                        fontWeight: FontWeight.bold)),
+                                      fontSize: 25.sp,
+                                      fontFamily: "uthmanic_hafs_ver09",
+                                    )),
                               ),
                             ],
                           ),

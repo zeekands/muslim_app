@@ -1,4 +1,3 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -8,7 +7,6 @@ import 'package:muslim_app/app/data/providers/detail_surah_provider.dart';
 class DetailSurahController extends GetxController with StateMixin {
   final surahNumber = Get.arguments[0].toString();
   final surahName = Get.arguments[1].toString();
-  final audioPlayer = AudioPlayer();
   Duration duration = Duration.zero;
   Duration position = Duration.zero;
   final isPlaying = false.obs;

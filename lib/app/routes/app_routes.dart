@@ -19,6 +19,9 @@ abstract class Routes {
   static const ASMAUL_HUSNA = _Paths.ASMAUL_HUSNA;
   static const TARTILI = _Paths.TARTILI;
   static const TARTILI_DETAIL = _Paths.TARTILI_DETAIL;
+  static const FEEDBACK = _Paths.FEEDBACK;
+  static const ABOUT = _Paths.ABOUT;
+  static const DETAIL_SURAH_LIST = _Paths.DETAIL_SURAH_LIST;
 }
 
 abstract class _Paths {
@@ -39,4 +42,7 @@ abstract class _Paths {
   static const ASMAUL_HUSNA = '/asmaul-husna';
   static const TARTILI = '/tartili';
   static const TARTILI_DETAIL = '/tartili-detail';
+  static const FEEDBACK = '/feedback';
+  static const ABOUT = '/about';
+  static const DETAIL_SURAH_LIST = '/detail-surah-list';
 }

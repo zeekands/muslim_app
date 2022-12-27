@@ -2,37 +2,37 @@
     "menu" : [
         {
             "name" : "Doa \nHarian",
-            "image" : "assets/icon/quran hijau.png",
+            "image" : "assets/icon/mosque.png",
             "routes" : "/doa"
         },
         {
             "name" : "Al Quran \nTerjemahan",
             "image" : "assets/icon/quran hijau.png",
-            "routes" : "doa-harian"
+            "routes" : "/quran"
         },{
             "name" : "Dizkir \nPagi Petang",
-            "image" : "assets/icon/quran hijau.png",
+            "image" : "assets/icon/open-hands.png",
             "routes" : "/atkhtar"
         },{
             "name" : "Kalender\nHijriyah",
-            "image" : "assets/icon/quran hijau.png",
-            "routes" : "doa-harian"
+            "image" : "assets/icon/night.png",
+            "routes" : "-"
         },{
             "name" : "Dzikir \nBada Sholat",
-            "image" : "assets/icon/quran hijau.png",
-            "routes" : "doa-harian"
+            "image" : "assets/icon/praying.png",
+            "routes" : "-"
         },{
             "name" : "Hadist",
-            "image" : "assets/icon/quran hijau.png",
-            "routes" : "doa-harian"
+            "image" : "assets/icon/clean_clothes.png",
+            "routes" : "-"
         },{
             "name" : "Qiblat \nShalat",
             "image" : "assets/icon/quran hijau.png",
-            "routes" : "doa-harian"
+            "routes" : "/qiblah"
         },{
             "name" : "Tutorial Ibadah",
-            "image" : "assets/icon/quran hijau.png",
-            "routes" : "doa-harian"
+            "image" : "assets/icon/muslim.png",
+            "routes" : "-"
         },{
             "name" : "Tartili \nAl Irsyad",
             "image" : "assets/icon/quran hijau.png",
@@ -40,15 +40,15 @@
         },{
             "name" : "Qiblat \nShalat",
             "image" : "assets/icon/quran hijau.png",
-            "routes" : "doa-harian"
+            "routes" : "/qiblah"
         },{
             "name" : "Doa Harian",
             "image" : "assets/icon/quran hijau.png",
-            "routes" : "doa-harian"
+            "routes" : "-"
         },{
             "name" : "Doa Harian",
             "image" : "assets/icon/quran hijau.png",
-            "routes" : "doa-harian"
+            "routes" : "-"
         }
     ]
 }

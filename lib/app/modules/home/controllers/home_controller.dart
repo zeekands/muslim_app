@@ -73,7 +73,6 @@ class HomeController extends GetxController with StateMixin {
         await placemarkFromCoordinates(position.latitude, position.longitude);
     await loadPrayerTimes();
     await loadMenu();
-    print(menu.length);
     change(asmaulHusna, status: RxStatus.success());
   }
 
@@ -86,9 +85,6 @@ class HomeController extends GetxController with StateMixin {
     prayerTimes = PrayerTimes.today(myCoordinates, params);
     prayerNow = prayerTimes.currentPrayer();
     prayerNext = prayerTimes.nextPrayer();
-
-    print(prayerTimes.timeForPrayer(prayerNext)!.hour);
-    print(prayerTimes.timeForPrayer(prayerNext)!.minute);
 
     if (prayerTimes.timeForPrayer(prayerNext)!.hour < 10 &&
         prayerTimes.timeForPrayer(prayerNext)!.minute < 10) {

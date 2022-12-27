@@ -4,6 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:muslim_app/app/modules/about/views/about_view.dart';
+import 'package:muslim_app/app/modules/feedback/views/feedback_view.dart';
 import 'package:muslim_app/app/routes/app_pages.dart';
 import 'package:muslim_app/app/utils/colors.dart';
 import 'package:muslim_app/app/utils/text.dart';
@@ -44,7 +46,7 @@ class HomeView extends GetView<HomeController> {
                       dateInfo(),
                       15.verticalSpace,
                       Container(
-                        width: .4.sw,
+                        width: .3.sw,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20.r),
                           color: const Color.fromRGBO(0, 0, 0, 0.15),
@@ -63,9 +65,7 @@ class HomeView extends GetView<HomeController> {
                             10.horizontalSpace,
                             Flexible(
                               child: Text(
-                                controller.placemarks.first
-                                        .subAdministrativeArea ??
-                                    '',
+                                controller.placemarks.first.locality ?? '',
                                 style: TextStyle(
                                   fontSize: ScreenUtil().setSp(14),
                                   color: Colors.white,
@@ -219,14 +219,55 @@ class HomeView extends GetView<HomeController> {
             ),
           ],
         ),
-        CircleAvatar(
+        PopupMenuButton(
+          child: CircleAvatar(
             maxRadius: 18.r,
             backgroundColor: Colors.white,
             child: Icon(
               Icons.more_horiz_rounded,
               color: Colors.black,
               size: 30.sp,
-            )),
+            ),
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.r),
+          ),
+          onSelected: (value) {
+            if (value == 1) {
+              Get.to(() => const FeedbackView());
+            } else if (value == 2) {
+              Get.to(() => const AboutView());
+            }
+          },
+          itemBuilder: (context) => [
+            PopupMenuItem(
+              child: Row(
+                children: [
+                  const Icon(
+                    Icons.feedback_outlined,
+                    color: Colors.black,
+                  ),
+                  10.horizontalSpace,
+                  const Text("Umpan balik"),
+                ],
+              ),
+              value: 1,
+            ),
+            PopupMenuItem(
+              child: Row(
+                children: [
+                  const Icon(
+                    Icons.info_outline,
+                    color: Colors.black,
+                  ),
+                  10.horizontalSpace,
+                  const Text("Tentang"),
+                ],
+              ),
+              value: 2,
+            ),
+          ],
+        ),
       ],
     );
   }
@@ -257,7 +298,20 @@ class HomeView extends GetView<HomeController> {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return GestureDetector(
-            onTap: () => Get.toNamed(controller.menu[index].routes),
+            onTap: () {
+              if (controller.menu[index].routes != "-") {
+                Get.toNamed(controller.menu[index].routes);
+              } else {
+                Get.snackbar(
+                  "Under Development",
+                  "Fitur ini sedang dalam tahap pengembangan",
+                  snackPosition: SnackPosition.BOTTOM,
+                  backgroundColor: Colors.orange,
+                  colorText: Colors.white,
+                  margin: const EdgeInsets.all(10),
+                );
+              }
+            },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [

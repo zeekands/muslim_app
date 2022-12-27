@@ -18,7 +18,7 @@ class NavbarBinding extends Bindings {
     Get.lazyPut(
       () => SalahTimeController(),
     );
-    Get.lazyPut(() => QuranController());
+    Get.put(QuranController());
     Get.lazyPut(() => AsmaulHusnaController());
   }
 }
