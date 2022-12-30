@@ -25,6 +25,7 @@ class DoaController extends GetxController with StateMixin {
     "Good Etiquette",
     "Nature",
     "Sickness & Death",
+    "Doa"
   ];
 
   @override

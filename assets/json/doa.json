@@ -2956,6 +2956,28 @@
                     ]
                 }
             ]
+        },
+        {
+            "category_name": "Doa",
+            "category_no": 12,
+            "chapter_count": 1,
+            "chapters": [
+                {
+                    "chapter_name": "Placing children under Allah's protection",
+                    "chapter_no": 48,
+                    "verses": [
+                        {
+                            "arabic_text": "أُعِيذُكُمَا بِكَلِمَاتِ اللَّهِ التَّامَّةِ مِنْ كُلِّ شَيْطَانٍ وَهَامَّةٍ وَمِنْ كُلِّ عَيْنٍ لَامَّةٍ",
+                            "duration": 22000,
+                            "share_url": "https://cdn.mymuslimdaily.com/res/dua/share_48_146.jpeg",
+                            "verse_audio": "https://cdn.mymuslimdaily.com/res/dua/dua_146.mp3",
+                            "verse_no": 146,
+                            "verse_text": "I seek protection for you in the Perfect Words of Allah from every devil and every beast, and from every envious blameworthy eye."
+                        }
+                    ]
+                }
+
+            ]
         }
     ]
 }

@@ -101,7 +101,7 @@ class AtkhtarView extends GetView<AtkhtarController> {
                     style: TextStyle(
                       fontSize: ScreenUtil().setSp(24),
                       fontWeight: FontWeight.normal,
-                      fontFamily: "uthmanic_hafs_ver09",
+                      fontFamily: "UthmanicHafs",
                     ),
                   ),
                   20.verticalSpace,
@@ -176,7 +176,7 @@ class AtkhtarView extends GetView<AtkhtarController> {
                     textAlign: TextAlign.right,
                     style: TextStyle(
                         fontSize: ScreenUtil().setSp(24),
-                        fontFamily: "uthmanic_hafs_ver09"),
+                        fontFamily: "UthmanicHafs"),
                   ),
                   20.verticalSpace,
                   Row(

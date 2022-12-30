@@ -28,25 +28,19 @@ class DoaListDetailView extends GetView<DoaListDetailController> {
         itemBuilder: (context, index) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text(
-                    "${controller.doaList.verses![index].verseNo}",
-                    style: TextStyle(
-                        fontSize: ScreenUtil().setSp(16),
-                        fontWeight: FontWeight.bold,
-                        color: green),
-                  ),
                   SizedBox(
                     width: 0.75.sw,
                     child: Text(
                         "${controller.doaList.verses![index].arabicText}",
                         textAlign: TextAlign.right,
                         style: TextStyle(
-                            fontSize: 25.sp, fontWeight: FontWeight.bold)),
+                            fontSize: 25.sp, fontFamily: "UthmanicHafs")),
                   ),
                 ],
               ),

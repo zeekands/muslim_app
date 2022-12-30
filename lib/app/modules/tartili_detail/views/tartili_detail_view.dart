@@ -14,10 +14,65 @@ class TartiliDetailView extends GetView<TartiliDetailController> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Details'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Get.snackbar(
+                "Under Development",
+                "Fitur ini sedang dalam tahap pengembangan",
+                snackPosition: SnackPosition.BOTTOM,
+                backgroundColor: Colors.orange,
+                colorText: Colors.white,
+                margin: const EdgeInsets.all(10),
+              );
+            },
+            icon: const Icon(Icons.favorite_border_outlined),
+          ),
+          IconButton(
+            onPressed: () {
+              Get.snackbar(
+                "Under Development",
+                "Fitur ini sedang dalam tahap pengembangan",
+                snackPosition: SnackPosition.BOTTOM,
+                backgroundColor: Colors.orange,
+                colorText: Colors.white,
+                margin: const EdgeInsets.all(10),
+              );
+            },
+            icon: const Icon(Icons.copy),
+          ),
+          IconButton(
+            onPressed: () {
+              Get.snackbar(
+                "Under Development",
+                "Fitur ini sedang dalam tahap pengembangan",
+                snackPosition: SnackPosition.BOTTOM,
+                backgroundColor: Colors.orange,
+                colorText: Colors.white,
+                margin: const EdgeInsets.all(10),
+              );
+            },
+            icon: const Icon(Icons.share),
+          ),
+          const Center(child: Text(' 1 / 44 ')),
+          IconButton(
+            onPressed: () {
+              Get.snackbar(
+                "Under Development",
+                "Fitur ini sedang dalam tahap pengembangan",
+                snackPosition: SnackPosition.BOTTOM,
+                backgroundColor: Colors.orange,
+                colorText: Colors.white,
+                margin: const EdgeInsets.all(10),
+              );
+            },
+            icon: const Icon(Icons.more_vert),
+          ),
+        ],
       ),
       body: SafeArea(
         child: StreamBuilder<QuerySnapshot>(
-          stream: FirebaseFirestore.instance.collection('tartilli').snapshots(),
+          stream: controller.getTartili(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return PageView.builder(
@@ -49,17 +104,19 @@ class TartiliDetailView extends GetView<TartiliDetailController> {
                               IconButton(
                                   onPressed: () {
                                     controller.pageController.previousPage(
-                                        duration: Duration(milliseconds: 500),
+                                        duration:
+                                            const Duration(milliseconds: 500),
                                         curve: Curves.easeIn);
                                   },
-                                  icon: Icon(Icons.arrow_back_ios)),
+                                  icon: const Icon(Icons.arrow_back_ios)),
                               IconButton(
                                   onPressed: () {
                                     controller.pageController.nextPage(
-                                        duration: Duration(milliseconds: 500),
+                                        duration:
+                                            const Duration(milliseconds: 500),
                                         curve: Curves.easeIn);
                                   },
-                                  icon: Icon(Icons.arrow_forward_ios)),
+                                  icon: const Icon(Icons.arrow_forward_ios)),
                             ],
                           ),
                         ),

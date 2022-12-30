@@ -46,7 +46,7 @@ class HomeView extends GetView<HomeController> {
                       dateInfo(),
                       15.verticalSpace,
                       Container(
-                        width: .3.sw,
+                        width: .5.sw,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20.r),
                           color: const Color.fromRGBO(0, 0, 0, 0.15),
@@ -86,7 +86,7 @@ class HomeView extends GetView<HomeController> {
                   color: green,
                   image: DecorationImage(
                       image: AssetImage("assets/images/background apk.png"),
-                      fit: BoxFit.fill),
+                      fit: BoxFit.fitWidth),
                 ),
                 child: controller.obx(
                   (state) => SingleChildScrollView(
@@ -202,7 +202,9 @@ class HomeView extends GetView<HomeController> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              DateFormat('EEEE, d MMMM', "id_ID").format(controller.today),
+              DateFormat('EEEE, d MMMM', "id_ID").format(controller.today) +
+                  " " +
+                  DateTime.now().year.toString(),
               style: TextStyle(
                 fontSize: ScreenUtil().setSp(17),
                 fontWeight: FontWeight.bold,

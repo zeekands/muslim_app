@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,6 +20,10 @@ class TartiliDetailController extends GetxController {
   @override
   void onClose() {
     super.onClose();
+  }
+
+  Stream<QuerySnapshot> getTartili() {
+    return FirebaseFirestore.instance.collection('tartilli').snapshots();
   }
 
   void increment() => count.value++;

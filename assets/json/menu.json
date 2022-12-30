@@ -42,8 +42,8 @@
             "image" : "assets/icon/quran hijau.png",
             "routes" : "/qiblah"
         },{
-            "name" : "Doa Harian",
-            "image" : "assets/icon/quran hijau.png",
+            "name" : "Sholat Jumat",
+            "image" : "assets/icon/family.png",
             "routes" : "-"
         },{
             "name" : "Doa Harian",
