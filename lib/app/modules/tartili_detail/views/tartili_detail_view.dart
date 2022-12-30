@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +14,7 @@ class TartiliDetailView extends GetView<TartiliDetailController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('Details'),
         actions: [
@@ -77,51 +80,21 @@ class TartiliDetailView extends GetView<TartiliDetailController> {
             if (snapshot.hasData) {
               return PageView.builder(
                 controller: controller.pageController,
-                itemCount: snapshot.data!.docs.length,
+                itemCount:
+                    snapshot.data!.docs[Get.arguments].get('data').length,
                 itemBuilder: (context, index) {
-                  return Column(
-                    children: [
-                      Container(
-                        height: 30.h,
-                      ),
-                      CachedNetworkImage(
-                        imageUrl: snapshot.data!.docs[Get.arguments]
-                            .get('data')[index],
-                        fit: BoxFit.fitHeight,
-                        progressIndicatorBuilder: (context, url, progress) {
-                          return const Center(
-                            child: CircularProgressIndicator(),
-                          );
-                        },
-                      ),
-                      Flexible(
-                        child: Container(
-                          width: double.infinity,
-                          color: Colors.grey[300],
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              IconButton(
-                                  onPressed: () {
-                                    controller.pageController.previousPage(
-                                        duration:
-                                            const Duration(milliseconds: 500),
-                                        curve: Curves.easeIn);
-                                  },
-                                  icon: const Icon(Icons.arrow_back_ios)),
-                              IconButton(
-                                  onPressed: () {
-                                    controller.pageController.nextPage(
-                                        duration:
-                                            const Duration(milliseconds: 500),
-                                        curve: Curves.easeIn);
-                                  },
-                                  icon: const Icon(Icons.arrow_forward_ios)),
-                            ],
-                          ),
-                        ),
-                      )
-                    ],
+                  log(snapshot.data!.docs[Get.arguments].get('data')[index]);
+                  return CachedNetworkImage(
+                    imageUrl:
+                        snapshot.data!.docs[Get.arguments].get('data')[index],
+                    fit: BoxFit.fitWidth,
+                    height: 1.sh,
+                    width: 1.sw,
+                    progressIndicatorBuilder: (context, url, progress) {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    },
                   );
                 },
               ).paddingOnly(top: 10.h);

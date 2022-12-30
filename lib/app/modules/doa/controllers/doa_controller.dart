@@ -58,6 +58,7 @@ class DoaSearchDelegate extends SearchDelegate {
         query = "";
       },
     );
+    return null;
   }
 
   @override
@@ -77,7 +78,7 @@ class DoaSearchDelegate extends SearchDelegate {
         itemCount: listChapters.length,
         itemBuilder: (context, index) {
           if (query.isNotEmpty &&
-              listChapters[index].chapterName!.contains(query)) {
+              listChapters[index].chapterName!.toLowerCase().contains(query)) {
             return Card(
               elevation: 0,
               child: GestureDetector(
@@ -139,7 +140,7 @@ class DoaSearchDelegate extends SearchDelegate {
                     10.horizontalSpace,
                     Flexible(
                       child: Text(
-                        '${listChapters[index].chapterName!}',
+                        listChapters[index].chapterName!,
                         style: TextStyle(
                             fontSize: 13.sp, fontWeight: FontWeight.bold),
                       ),
@@ -163,7 +164,7 @@ class DoaSearchDelegate extends SearchDelegate {
         itemCount: listChapters.length,
         itemBuilder: (context, index) {
           if (query.isNotEmpty &&
-              listChapters[index].chapterName!.contains(query)) {
+              listChapters[index].chapterName!.toLowerCase().contains(query)) {
             return Card(
               elevation: 0,
               child: GestureDetector(

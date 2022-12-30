@@ -30,19 +30,11 @@ class AboutView extends GetView<AboutController> {
             20.verticalSpace,
             ListTile(
               dense: T,
+              onTap: () {
+                showAboutDialog(context: context);
+              },
               leading: TextRegular(
-                text: "Welly Eka Cipta",
-                fontSize: 14.sp,
-              ),
-              trailing: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.adaptive.arrow_forward),
-              ),
-            ),
-            ListTile(
-              dense: T,
-              leading: TextRegular(
-                text: "Aziz Kandias",
+                text: "Tentang",
                 fontSize: 14.sp,
               ),
               trailing: IconButton(
