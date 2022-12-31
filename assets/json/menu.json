@@ -20,11 +20,11 @@
         },{
             "name" : "Dzikir \nBada Sholat",
             "image" : "assets/icon/praying.png",
-            "routes" : "-"
+            "routes" : "/dzikir"
         },{
             "name" : "Hadist",
             "image" : "assets/icon/clean_clothes.png",
-            "routes" : "-"
+            "routes" : "/hadist"
         },{
             "name" : "Qiblat \nShalat",
             "image" : "assets/icon/quran hijau.png",

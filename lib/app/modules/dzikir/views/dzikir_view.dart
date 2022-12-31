@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:get/get.dart';
-import 'package:muslim_app/app/routes/app_pages.dart';
 
-import '../controllers/doa_controller.dart';
+import '../../../routes/app_pages.dart';
+import '../controllers/dzikir_controller.dart';
 
-class DoaView extends GetView<DoaController> {
-  const DoaView({Key? key}) : super(key: key);
+class DzikirView extends GetView<DzikirController> {
+  const DzikirView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Doa'),
+        title: const Text('Dzikir Bada Sholat'),
         actions: [
-          IconButton(
-            onPressed: () {
-              showSearch(
-                context: context,
-                delegate: DoaSearchDelegate(controller.listChapters),
-              );
-            },
-            icon: const Icon(Icons.search),
-          ),
+          // IconButton(
+          //   onPressed: () {
+          //     showSearch(
+          //       context: context,
+          //       delegate: DoaSearchDelegate(controller.listChapters),
+          //     );
+          //   },
+          //   icon: const Icon(Icons.search),
+          // ),
         ],
       ),
       body: controller.obx(
@@ -31,12 +32,12 @@ class DoaView extends GetView<DoaController> {
             crossAxisSpacing: 10.r,
             mainAxisSpacing: 10.r,
           ),
-          itemCount: controller.doaList.length,
+          itemCount: controller.DzikirList.length,
           itemBuilder: (BuildContext ctx, index) {
             return GestureDetector(
               onTap: () {
                 Get.toNamed(Routes.DOA_LIST,
-                    arguments: controller.doaList[index]);
+                    arguments: controller.DzikirList[index]);
               },
               child: Container(
                 alignment: Alignment.center,
@@ -61,7 +62,7 @@ class DoaView extends GetView<DoaController> {
                     ),
                     10.verticalSpace,
                     Text(
-                      controller.doaList[index],
+                      controller.DzikirList[index],
                       style: TextStyle(
                         fontSize: ScreenUtil().setSp(12),
                       ),

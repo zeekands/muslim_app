@@ -13,24 +13,12 @@ class DoaController extends GetxController with StateMixin {
   var listAllDoa = <Doa>[];
   var listChapters = <Chapters>[];
 
-  final doaList = [
-    "Morning & Evening",
-    "Home & Family",
-    "Food & Drink",
-    "Joy & Distress",
-    "Travel",
-    "Prayer",
-    "Praising Allah",
-    "Hajj & Umrah",
-    "Good Etiquette",
-    "Nature",
-    "Sickness & Death",
-    "Doa"
-  ];
+  final doaList = [].obs;
 
   @override
   void onInit() async {
     super.onInit();
+    change(null, status: RxStatus.loading());
     allDoa = Doas.fromJson(
       jsonDecode(
         await rootBundle.loadString('assets/json/doa.json'),
@@ -42,6 +30,9 @@ class DoaController extends GetxController with StateMixin {
         listChapters.add(element);
       });
     });
+
+    doaList.value = allDoa.doa!.map((e) => e.categoryName).toList();
+    change(null, status: RxStatus.success());
   }
 }
 

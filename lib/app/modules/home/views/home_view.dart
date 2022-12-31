@@ -94,7 +94,7 @@ class HomeView extends GetView<HomeController> {
                       children: [
                         Container(
                           width: 1.sw,
-                          height: 45.8.sh,
+                          height: .7.sh,
                           decoration: const BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.only(
@@ -135,7 +135,7 @@ class HomeView extends GetView<HomeController> {
                               ),
                             ),
                             20.verticalSpace,
-                            asmaUlHusnaCard(),
+                            doaHariIni(),
                           ],
                         ).paddingSymmetric(horizontal: 10.w, vertical: 10.h),
                       ],
@@ -414,363 +414,93 @@ class HomeView extends GetView<HomeController> {
       },
     );
   }
-}
 
-class menuOld extends StatelessWidget {
-  const menuOld({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: [
-          20.horizontalSpace,
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  GestureDetector(
-                    onTap: () => Get.toNamed(Routes.DOA),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/icon/quran hijau.png',
-                          width: 24.w,
-                          height: 24.h,
-                        ),
-                        5.verticalSpace,
-                        TextRegular(
-                          text: "Doa\nHarian",
-                          fontSize: 10.sp,
-                        ),
-                      ],
+  Widget doaHariIni() {
+    return Card(
+      color: Colors.grey[100],
+      child: SizedBox(
+        height: .26.sh,
+        width: 1.sw,
+        child: Column(
+          children: [
+            10.verticalSpace,
+            Row(
+              children: [
+                Image.asset(
+                  "assets/icon/praying.png",
+                  width: 32.w,
+                  height: 32.h,
+                ),
+                10.horizontalSpace,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TextBold(
+                      text: "Doa Hari Ini",
+                      fontSize: 12.sp,
                     ),
-                  ),
-                  25.horizontalSpace,
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/icon/praying.png',
-                        width: 24.w,
-                        height: 24.h,
-                      ),
-                      5.verticalSpace,
-                      const TextRegular(text: "Dzikir \nPetang")
-                    ],
-                  ),
-                  25.horizontalSpace,
-                  GestureDetector(
-                    onTap: () => Get.toNamed(Routes.ATKHTAR),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/icon/praying.png',
-                          width: 24.w,
-                          height: 24.h,
-                        ),
-                        5.verticalSpace,
-                        const TextRegular(text: "Tartili \nAudio")
-                      ],
-                    ),
-                  ),
-                  25.horizontalSpace,
-                  GestureDetector(
-                    onTap: () => Get.toNamed(Routes.QIBLAH),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/icon/praying.png',
-                          width: 24.w,
-                          height: 24.h,
-                        ),
-                        5.verticalSpace,
-                        const TextRegular(text: "Tartili \nNo Audio")
-                      ],
-                    ),
-                  ),
-                  25.horizontalSpace,
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/icon/praying.png',
-                        width: 24.w,
-                        height: 24.h,
-                      ),
-                      5.verticalSpace,
-                      const TextRegular(text: "Khadist \nTKIT")
-                    ],
-                  ),
-                ],
+                    TextLight(
+                      text: "Wearing a garment",
+                      fontSize: 10.sp,
+                    )
+                  ],
+                ),
+                const Spacer(),
+                TextRegular(
+                  text: "Lebih banyak",
+                  fontSize: 12.sp,
+                ),
+                Icon(
+                  Icons.arrow_forward_ios_outlined,
+                  size: 18.r,
+                )
+              ],
+            ).paddingSymmetric(horizontal: 20.w),
+            20.verticalSpace,
+            Text(
+              "الْحَمْدُ لِلّهِ الَّذِي كَسَانِي هَذَا (الثَّوْبَ) وَرَزَقَنِيهِ مِنْ غَـيـْرِ حَوْلٍ مِنِّي وَلَا قُـوَّةٍ",
+              textAlign: TextAlign.end,
+              style: TextStyle(
+                fontSize: 18.sp,
+                fontFamily: "UthmanicHafs",
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
               ),
-              20.verticalSpace,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  GestureDetector(
-                    onTap: () => Get.toNamed(Routes.DOA),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/icon/quran hijau.png',
-                          width: 24.w,
-                          height: 24.h,
-                        ),
-                        5.verticalSpace,
-                        TextRegular(
-                          text: "Hadist \nSMPIT",
-                          fontSize: 10.sp,
-                        ),
-                      ],
-                    ),
+            ).paddingSymmetric(horizontal: 20.w),
+            10.verticalSpace,
+            TextRegular(
+              fontSize: 12.sp,
+              textAlign: TextAlign.left,
+              text:
+                  "Praise is to Allah Who has clothed me with this (garment) and provided it for me, though I was powerless myself and incapable",
+            ).paddingSymmetric(horizontal: 15.w),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: green, minimumSize: Size(150.w, 30.h)),
+                  child: TextBold(
+                    text: "Baca",
+                    textColour: Colors.white,
+                    fontSize: 14.sp,
                   ),
-                  25.horizontalSpace,
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/icon/praying.png',
-                        width: 24.w,
-                        height: 24.h,
-                      ),
-                      5.verticalSpace,
-                      const TextRegular(text: "Hadist\n SMAIT")
-                    ],
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: green, minimumSize: Size(150.w, 30.h)),
+                  child: TextBold(
+                    text: "Bagikan",
+                    textColour: Colors.white,
+                    fontSize: 14.sp,
                   ),
-                  25.horizontalSpace,
-                  GestureDetector(
-                    onTap: () => Get.toNamed(Routes.ATKHTAR),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/icon/praying.png',
-                          width: 24.w,
-                          height: 24.h,
-                        ),
-                        5.verticalSpace,
-                        const TextRegular(text: "Al Quran \nHalaman")
-                      ],
-                    ),
-                  ),
-                  25.horizontalSpace,
-                  GestureDetector(
-                    onTap: () => Get.toNamed(Routes.QIBLAH),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/icon/praying.png',
-                          width: 24.w,
-                          height: 24.h,
-                        ),
-                        5.verticalSpace,
-                        const TextRegular(text: "Dzikir \nBada Sholat ")
-                      ],
-                    ),
-                  ),
-                  25.horizontalSpace,
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/icon/praying.png',
-                        width: 24.w,
-                        height: 24.h,
-                      ),
-                      5.verticalSpace,
-                      const TextRegular(text: "Tutorial \n  Ibadah")
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          ),
-          20.horizontalSpace,
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  GestureDetector(
-                    onTap: () => Get.toNamed(Routes.DOA),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          CupertinoIcons.hand_draw,
-                          size: 32.r,
-                        ),
-                        5.verticalSpace,
-                        const Text("Doa")
-                      ],
-                    ),
-                  ),
-                  25.horizontalSpace,
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.room_preferences,
-                        size: 32.r,
-                      ),
-                      5.verticalSpace,
-                      const Text("Tasbih")
-                    ],
-                  ),
-                  25.horizontalSpace,
-                  GestureDetector(
-                    onTap: () => Get.toNamed(Routes.ATKHTAR),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          CupertinoIcons.hand_raised_fill,
-                          size: 32.r,
-                        ),
-                        5.verticalSpace,
-                        const Text("Akhtar")
-                      ],
-                    ),
-                  ),
-                  25.horizontalSpace,
-                  GestureDetector(
-                    onTap: () => Get.toNamed(Routes.QIBLAH),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          CupertinoIcons.compass,
-                          size: 32.r,
-                        ),
-                        5.verticalSpace,
-                        const Text("Qibla")
-                      ],
-                    ),
-                  ),
-                  25.horizontalSpace,
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        CupertinoIcons.calendar,
-                        size: 32.r,
-                      ),
-                      5.verticalSpace,
-                      const Text("Calendar")
-                    ],
-                  ),
-                ],
-              ),
-              20.verticalSpace,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  GestureDetector(
-                    onTap: () => Get.toNamed(Routes.DOA),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          CupertinoIcons.hand_draw,
-                          size: 32.r,
-                        ),
-                        5.verticalSpace,
-                        const Text("Doa")
-                      ],
-                    ),
-                  ),
-                  25.horizontalSpace,
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.room_preferences,
-                        size: 32.r,
-                      ),
-                      5.verticalSpace,
-                      const Text("Tasbih")
-                    ],
-                  ),
-                  25.horizontalSpace,
-                  GestureDetector(
-                    onTap: () => Get.toNamed(Routes.ATKHTAR),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          CupertinoIcons.hand_raised_fill,
-                          size: 32.r,
-                        ),
-                        5.verticalSpace,
-                        const Text("Akhtar")
-                      ],
-                    ),
-                  ),
-                  25.horizontalSpace,
-                  GestureDetector(
-                    onTap: () => Get.toNamed(Routes.QIBLAH),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          CupertinoIcons.compass,
-                          size: 32.r,
-                        ),
-                        5.verticalSpace,
-                        const Text("Qibla")
-                      ],
-                    ),
-                  ),
-                  25.horizontalSpace,
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        CupertinoIcons.calendar,
-                        size: 32.r,
-                      ),
-                      5.verticalSpace,
-                      const Text("Calendar")
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          ),
-          50.horizontalSpace,
-        ],
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

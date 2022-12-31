@@ -22,6 +22,9 @@ abstract class Routes {
   static const FEEDBACK = _Paths.FEEDBACK;
   static const ABOUT = _Paths.ABOUT;
   static const DETAIL_SURAH_LIST = _Paths.DETAIL_SURAH_LIST;
+  static const DZIKIR = _Paths.DZIKIR;
+  static const HADIST = _Paths.HADIST;
+  static const SPLASHSCREEN = _Paths.SPLASHSCREEN;
 }
 
 abstract class _Paths {
@@ -45,4 +48,7 @@ abstract class _Paths {
   static const FEEDBACK = '/feedback';
   static const ABOUT = '/about';
   static const DETAIL_SURAH_LIST = '/detail-surah-list';
+  static const DZIKIR = '/dzikir';
+  static const HADIST = '/hadist';
+  static const SPLASHSCREEN = '/splashscreen';
 }

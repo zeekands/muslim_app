@@ -16,8 +16,12 @@ import '../modules/doa_list/bindings/doa_list_binding.dart';
 import '../modules/doa_list/views/doa_list_view.dart';
 import '../modules/doa_list_detail/bindings/doa_list_detail_binding.dart';
 import '../modules/doa_list_detail/views/doa_list_detail_view.dart';
+import '../modules/dzikir/bindings/dzikir_binding.dart';
+import '../modules/dzikir/views/dzikir_view.dart';
 import '../modules/feedback/bindings/feedback_binding.dart';
 import '../modules/feedback/views/feedback_view.dart';
+import '../modules/hadist/bindings/hadist_binding.dart';
+import '../modules/hadist/views/hadist_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/juz_surah/bindings/juz_surah_binding.dart';
@@ -30,6 +34,8 @@ import '../modules/quran/bindings/quran_binding.dart';
 import '../modules/quran/views/quran_view.dart';
 import '../modules/salah_time/bindings/salah_time_binding.dart';
 import '../modules/salah_time/views/salah_time_view.dart';
+import '../modules/splashscreen/bindings/splashscreen_binding.dart';
+import '../modules/splashscreen/views/splashscreen_view.dart';
 import '../modules/tab_bar/bindings/tab_bar_binding.dart';
 import '../modules/tab_bar/views/tab_bar_view.dart';
 import '../modules/tartili/bindings/tartili_binding.dart';
@@ -42,7 +48,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.NAVBAR;
+  static const INITIAL = Routes.SPLASHSCREEN;
 
   static final routes = [
     GetPage(
@@ -134,6 +140,21 @@ class AppPages {
       name: _Paths.DETAIL_SURAH_LIST,
       page: () => const DetailSurahListView(),
       binding: DetailSurahListBinding(),
+    ),
+    GetPage(
+      name: _Paths.DZIKIR,
+      page: () => const DzikirView(),
+      binding: DzikirBinding(),
+    ),
+    GetPage(
+      name: _Paths.HADIST,
+      page: () => const HadistView(),
+      binding: HadistBinding(),
+    ),
+    GetPage(
+      name: _Paths.SPLASHSCREEN,
+      page: () => const SplashscreenView(),
+      binding: SplashscreenBinding(),
     ),
   ];
 }
