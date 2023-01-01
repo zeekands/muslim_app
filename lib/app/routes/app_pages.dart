@@ -22,6 +22,8 @@ import '../modules/feedback/bindings/feedback_binding.dart';
 import '../modules/feedback/views/feedback_view.dart';
 import '../modules/hadist/bindings/hadist_binding.dart';
 import '../modules/hadist/views/hadist_view.dart';
+import '../modules/haji_umrah/bindings/haji_umrah_binding.dart';
+import '../modules/haji_umrah/views/haji_umrah_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/juz_surah/bindings/juz_surah_binding.dart';
@@ -32,6 +34,8 @@ import '../modules/qiblah/bindings/qiblah_binding.dart';
 import '../modules/qiblah/views/qiblah_view.dart';
 import '../modules/quran/bindings/quran_binding.dart';
 import '../modules/quran/views/quran_view.dart';
+import '../modules/ramadhan/bindings/ramadhan_binding.dart';
+import '../modules/ramadhan/views/ramadhan_view.dart';
 import '../modules/salah_time/bindings/salah_time_binding.dart';
 import '../modules/salah_time/views/salah_time_view.dart';
 import '../modules/splashscreen/bindings/splashscreen_binding.dart';
@@ -155,6 +159,16 @@ class AppPages {
       name: _Paths.SPLASHSCREEN,
       page: () => const SplashscreenView(),
       binding: SplashscreenBinding(),
+    ),
+    GetPage(
+      name: _Paths.RAMADHAN,
+      page: () => const RamadhanView(),
+      binding: RamadhanBinding(),
+    ),
+    GetPage(
+      name: _Paths.HAJI_UMRAH,
+      page: () => const HajiUmrahView(),
+      binding: HajiUmrahBinding(),
     ),
   ];
 }

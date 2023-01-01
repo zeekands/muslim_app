@@ -57,7 +57,7 @@ class DzikirView extends GetView<DzikirController> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      "assets/images/moon.png",
+                      controller.allDzikir.dzikir![index].icon!,
                       height: ScreenUtil().setHeight(32),
                     ),
                     10.verticalSpace,

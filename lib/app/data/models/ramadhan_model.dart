@@ -1,41 +1,41 @@
-class Dzikirs {
-  List<Dzikir>? dzikir;
+class Ramadhans {
+  List<Ramadhan>? ramadhan;
 
-  Dzikirs({this.dzikir});
+  Ramadhans({this.ramadhan});
 
-  Dzikirs.fromJson(Map<String, dynamic> json) {
-    if (json['dzikir'] != null) {
-      dzikir = <Dzikir>[];
-      json['dzikir'].forEach((v) {
-        dzikir!.add(new Dzikir.fromJson(v));
+  Ramadhans.fromJson(Map<String, dynamic> json) {
+    if (json['ramadhan'] != null) {
+      ramadhan = <Ramadhan>[];
+      json['ramadhan'].forEach((v) {
+        ramadhan!.add(new Ramadhan.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.dzikir != null) {
-      data['dzikir'] = this.dzikir!.map((v) => v.toJson()).toList();
+    if (this.ramadhan != null) {
+      data['ramadhan'] = this.ramadhan!.map((v) => v.toJson()).toList();
     }
     return data;
   }
 }
 
-class Dzikir {
+class Ramadhan {
   String? categoryName;
   int? categoryNo;
-  int? chapterCount;
   String? icon;
+  int? chapterCount;
   List<Chapters>? chapters;
 
-  Dzikir(
+  Ramadhan(
       {this.categoryName,
       this.categoryNo,
-      this.chapterCount,
       this.icon,
+      this.chapterCount,
       this.chapters});
 
-  Dzikir.fromJson(Map<String, dynamic> json) {
+  Ramadhan.fromJson(Map<String, dynamic> json) {
     categoryName = json['category_name'];
     categoryNo = json['category_no'];
     icon = json['icon'];
@@ -52,6 +52,7 @@ class Dzikir {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['category_name'] = this.categoryName;
     data['category_no'] = this.categoryNo;
+    data['icon'] = this.icon;
     data['chapter_count'] = this.chapterCount;
     if (this.chapters != null) {
       data['chapters'] = this.chapters!.map((v) => v.toJson()).toList();

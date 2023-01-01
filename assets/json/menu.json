@@ -42,13 +42,13 @@
             "image" : "assets/icon/quran hijau.png",
             "routes" : "/qiblah"
         },{
-            "name" : "Sholat Jumat",
+            "name" : "Ramadhan",
             "image" : "assets/icon/family.png",
-            "routes" : "-"
+            "routes" : "/ramadhan"
         },{
-            "name" : "Doa Harian",
+            "name" : "Haji \nUmroh",
             "image" : "assets/icon/quran hijau.png",
-            "routes" : "-"
+            "routes" : "/haji-umrah"
         }
     ]
 }

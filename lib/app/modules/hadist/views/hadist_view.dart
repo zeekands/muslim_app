@@ -57,7 +57,7 @@ class HadistView extends GetView<HadistController> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      "assets/images/moon.png",
+                      controller.allHadist.hadist![index].icon!,
                       height: ScreenUtil().setHeight(32),
                     ),
                     10.verticalSpace,

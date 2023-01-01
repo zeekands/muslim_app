@@ -3,6 +3,7 @@
         {
             "category_name": "Morning & Evening",
             "category_no": 1,
+            "icon" : "assets/icon/praying.png",
             "chapter_count": 6,
             "chapters": [
                 {
@@ -404,6 +405,7 @@
         {
             "category_name": "Home & Family",
             "category_no": 2,
+            "icon" : "assets/icon/praying.png",
             "chapter_count": 14,
             "chapters": [
                 {
@@ -634,6 +636,7 @@
             "category_name": "Food & Drink",
             "category_no": 3,
             "chapter_count": 7,
+            "icon" : "assets/icon/praying.png",
             "chapters": [
                 {
                     "chapter_name": "Upon breaking fast",
@@ -761,6 +764,7 @@
             "category_name": "Joy & Distress",
             "category_no": 4,
             "chapter_count": 15,
+            "icon" : "assets/icon/praying.png",
             "chapters": [
                 {
                     "chapter_name": "For anxiety and sorrow",
@@ -1064,6 +1068,7 @@
             "category_name": "Travel",
             "category_no": 5,
             "chapter_count": 11,
+            "icon" : "assets/icon/praying.png",
             "chapters": [
                 {
                     "chapter_name": "When mounting an animal or any means of transport",
@@ -1233,6 +1238,7 @@
             "category_name": "Prayer",
             "category_no": 6,
             "chapter_count": 19,
+            "icon" : "assets/icon/praying.png",
             "chapters": [
                 {
                     "chapter_name": "When starting ablution",
@@ -1866,6 +1872,7 @@
             "category_name": "Praising Allah",
             "category_no": 7,
             "chapter_count": 9,
+            "icon" : "assets/icon/praying.png",
             "chapters": [
                 {
                     "chapter_name": "For seeking guidance in forming a decision",
@@ -2133,6 +2140,7 @@
             "category_name": "Hajj & Umrah",
             "category_no": 8,
             "chapter_count": 8,
+            "icon" : "assets/icon/praying.png",
             "chapters": [
                 {
                     "chapter_name": "The Talbiya for the one doing Haj or Umrah",
@@ -2252,6 +2260,7 @@
             "category_name": "Good Etiquette",
             "category_no": 9,
             "chapter_count": 20,
+            "icon" : "assets/icon/praying.png",
             "chapters": [
                 {
                     "chapter_name": "Congratulation on the occasion of a birth",
@@ -2547,6 +2556,7 @@
             "category_name": "Nature",
             "category_no": 10,
             "chapter_count": 10,
+            "icon" : "assets/icon/praying.png",
             "chapters": [
                 {
                     "chapter_name": "During a wind storm",
@@ -2718,6 +2728,7 @@
             "category_name": "Sickness & Death",
             "category_no": 11,
             "chapter_count": 13,
+            "icon" : "assets/icon/praying.png",
             "chapters": [
                 {
                     "chapter_name": "Placing children under Allah's protection",
@@ -2961,6 +2972,7 @@
             "category_name": "Doa",
             "category_no": 12,
             "chapter_count": 1,
+            "icon" : "assets/icon/praying.png",
             "chapters": [
                 {
                     "chapter_name": "Placing children under Allah's protection",

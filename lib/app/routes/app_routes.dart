@@ -25,6 +25,8 @@ abstract class Routes {
   static const DZIKIR = _Paths.DZIKIR;
   static const HADIST = _Paths.HADIST;
   static const SPLASHSCREEN = _Paths.SPLASHSCREEN;
+  static const RAMADHAN = _Paths.RAMADHAN;
+  static const HAJI_UMRAH = _Paths.HAJI_UMRAH;
 }
 
 abstract class _Paths {
@@ -51,4 +53,6 @@ abstract class _Paths {
   static const DZIKIR = '/dzikir';
   static const HADIST = '/hadist';
   static const SPLASHSCREEN = '/splashscreen';
+  static const RAMADHAN = '/ramadhan';
+  static const HAJI_UMRAH = '/haji-umrah';
 }

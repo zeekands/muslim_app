@@ -25,15 +25,21 @@ class Hadist {
   String? categoryName;
   int? categoryNo;
   int? chapterCount;
+  String? icon;
   List<Chapters>? chapters;
 
   Hadist(
-      {this.categoryName, this.categoryNo, this.chapterCount, this.chapters});
+      {this.categoryName,
+      this.categoryNo,
+      this.chapterCount,
+      this.icon,
+      this.chapters});
 
   Hadist.fromJson(Map<String, dynamic> json) {
     categoryName = json['category_name'];
     categoryNo = json['category_no'];
     chapterCount = json['chapter_count'];
+    icon = json['icon'];
     if (json['chapters'] != null) {
       chapters = <Chapters>[];
       json['chapters'].forEach((v) {

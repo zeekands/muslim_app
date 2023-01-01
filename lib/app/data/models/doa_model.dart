@@ -25,14 +25,21 @@ class Doa {
   String? categoryName;
   int? categoryNo;
   int? chapterCount;
+  String? icon;
   List<Chapters>? chapters;
 
-  Doa({this.categoryName, this.categoryNo, this.chapterCount, this.chapters});
+  Doa(
+      {this.categoryName,
+      this.categoryNo,
+      this.chapterCount,
+      this.icon,
+      this.chapters});
 
   Doa.fromJson(Map<String, dynamic> json) {
     categoryName = json['category_name'];
     categoryNo = json['category_no'];
     chapterCount = json['chapter_count'];
+    icon = json['icon'];
     if (json['chapters'] != null) {
       chapters = <Chapters>[];
       json['chapters'].forEach((v) {

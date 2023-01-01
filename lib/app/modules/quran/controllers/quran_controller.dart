@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:muslim_app/app/data/providers/surah_model_provider.dart';
@@ -8,6 +9,11 @@ class QuranController extends GetxController
     with GetSingleTickerProviderStateMixin {
   var page = 0.obs;
   PageController pageController = PageController();
+  final juzRef = FirebaseFirestore.instance.collection('juz');
+
+  Stream<QuerySnapshot> juzStream() {
+    return juzRef.snapshots();
+  }
 
   @override
   void onInit() async {

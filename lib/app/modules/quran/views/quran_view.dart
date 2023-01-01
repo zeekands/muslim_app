@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -63,50 +64,59 @@ class QuranView extends GetView<QuranController> {
                   elevation: 0,
                   child: GestureDetector(
                     onTap: () {
-                      showCupertinoModalPopup(
-                        context: context,
-                        builder: (BuildContext context) => CupertinoActionSheet(
-                          title: const Text('Pilih Tipe Al-Quran'),
-                          message: const Text('Your options are '),
-                          cancelButton: CupertinoActionSheetAction(
-                            child: const Text('Cancel',
-                                style: TextStyle(color: Colors.red)),
-                            isDefaultAction: true,
-                            onPressed: () {
-                              Navigator.pop(context, 'Cancel');
-                            },
-                          ),
-                          actions: <Widget>[
-                            CupertinoActionSheetAction(
-                              child: const Text('Al-Quran Per Ayat',
-                                  style: TextStyle(color: green)),
-                              onPressed: () {
-                                Get.back();
-                                Get.toNamed(
-                                  Routes.DETAIL_SURAH_LIST,
-                                  arguments: [
-                                    snapshot.data![index].number,
-                                    snapshot.data![index].englishName
-                                  ],
-                                );
-                              },
-                            ),
-                            CupertinoActionSheetAction(
-                              child: const Text('Al-Quran Per Halaman',
-                                  style: TextStyle(color: green)),
-                              onPressed: () {
-                                Get.back();
-                                Get.toNamed(
-                                  Routes.DETAIL_SURAH,
-                                  arguments: [
-                                    snapshot.data![index].number,
-                                    snapshot.data![index].englishName
-                                  ],
-                                );
-                              },
-                            )
-                          ],
-                        ),
+                      // showCupertinoModalPopup(
+                      //   context: context,
+                      //   builder: (BuildContext context) => CupertinoActionSheet(
+                      //     title: const Text('Pilih Tipe Al-Quran'),
+                      //     message: const Text('Your options are '),
+                      //     cancelButton: CupertinoActionSheetAction(
+                      //       child: const Text('Cancel',
+                      //           style: TextStyle(color: Colors.red)),
+                      //       isDefaultAction: true,
+                      //       onPressed: () {
+                      //         Navigator.pop(context, 'Cancel');
+                      //       },
+                      //     ),
+                      //     actions: <Widget>[
+                      //       CupertinoActionSheetAction(
+                      //         child: const Text('Al-Quran Per Ayat',
+                      //             style: TextStyle(color: green)),
+                      //         onPressed: () {
+                      //           Get.back();
+                      //           Get.toNamed(
+                      //             Routes.DETAIL_SURAH_LIST,
+                      //             arguments: [
+                      //               snapshot.data![index].number,
+                      //               snapshot.data![index].englishName
+                      //             ],
+                      //           );
+                      //         },
+                      //       ),
+                      //       CupertinoActionSheetAction(
+                      //         child: const Text('Al-Quran Per Halaman',
+                      //             style: TextStyle(color: green)),
+                      //         onPressed: () {
+                      //           Get.back();
+                      //           Get.toNamed(
+                      //             Routes.DETAIL_SURAH,
+                      //             arguments: [
+                      //               snapshot.data![index].number,
+                      //               snapshot.data![index].englishName
+                      //             ],
+                      //           );
+                      //         },
+                      //       )
+                      //     ],
+                      //   ),
+                      // );
+
+                      Get.snackbar(
+                        "Under Development",
+                        "Fitur ini sedang dalam tahap pengembangan",
+                        snackPosition: SnackPosition.BOTTOM,
+                        backgroundColor: Colors.orange,
+                        colorText: Colors.white,
+                        margin: const EdgeInsets.all(10),
                       );
                     },
                     child: Container(
@@ -197,77 +207,81 @@ class QuranView extends GetView<QuranController> {
   }
 
   Widget buildJuz() {
-    return ListView.builder(
-      itemCount: 30,
-      itemBuilder: (context, index) {
-        index += 1;
-        return Card(
-          elevation: 0,
-          child: GestureDetector(
-            onTap: () {
-              Get.toNamed(
-                Routes.JUZ_SURAH,
-                arguments: index,
-              );
-            },
-            child: Container(
-              height: 50.h,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.r),
-                color: Colors.white,
-              ),
-              width: 1.sw,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 32.w,
-                        height: 32.h,
-                        child: Stack(
+    return StreamBuilder<QuerySnapshot>(
+        stream: controller.juzStream(),
+        builder: (context, snapshot) {
+          return ListView.builder(
+            itemCount: snapshot.data?.docs.length,
+            itemBuilder: (context, index) {
+              return Card(
+                elevation: 0,
+                child: GestureDetector(
+                  onTap: () {
+                    Get.toNamed(
+                      Routes.JUZ_SURAH,
+                      arguments: index,
+                    );
+                  },
+                  child: Container(
+                    height: 50.h,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.r),
+                      color: Colors.white,
+                    ),
+                    width: 1.sw,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
                           children: [
-                            Center(
-                              child: Image.asset(
-                                'assets/icon/ic_ayat.png',
-                                width: 32.h,
-                                height: 32.w,
+                            SizedBox(
+                              width: 32.w,
+                              height: 32.h,
+                              child: Stack(
+                                children: [
+                                  Center(
+                                    child: Image.asset(
+                                      'assets/icon/ic_ayat.png',
+                                      width: 32.h,
+                                      height: 32.w,
+                                    ),
+                                  ),
+                                  Center(
+                                    child: Text(
+                                      '${index + 1}',
+                                      style: TextStyle(
+                                        fontSize: ScreenUtil().setSp(10),
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                            Center(
-                              child: Text(
-                                '$index',
-                                style: TextStyle(
-                                  fontSize: ScreenUtil().setSp(10),
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
+                            10.horizontalSpace,
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Juz ${index + 1}',
+                                  style: TextStyle(
+                                      fontSize: 13.sp,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
                             ),
+                            const Spacer(),
                           ],
                         ),
-                      ),
-                      10.horizontalSpace,
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Juz $index',
-                            style: TextStyle(
-                                fontSize: 13.sp, fontWeight: FontWeight.bold),
-                          )
-                        ],
-                      ),
-                      const Spacer(),
-                    ],
-                  ),
-                ],
-              ),
-            ).paddingSymmetric(horizontal: 20.w),
-          ),
-        ).paddingSymmetric(horizontal: 10.w);
-      },
-    ).paddingSymmetric(vertical: 10.h);
+                      ],
+                    ),
+                  ).paddingSymmetric(horizontal: 20.w),
+                ),
+              ).paddingSymmetric(horizontal: 10.w);
+            },
+          ).paddingSymmetric(vertical: 10.h);
+        });
   }
 }

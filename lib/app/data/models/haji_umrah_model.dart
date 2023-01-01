@@ -1,41 +1,41 @@
-class Dzikirs {
-  List<Dzikir>? dzikir;
+class HajiUmrahs {
+  List<HajiUmrah>? hajiUmrah;
 
-  Dzikirs({this.dzikir});
+  HajiUmrahs({this.hajiUmrah});
 
-  Dzikirs.fromJson(Map<String, dynamic> json) {
-    if (json['dzikir'] != null) {
-      dzikir = <Dzikir>[];
-      json['dzikir'].forEach((v) {
-        dzikir!.add(new Dzikir.fromJson(v));
+  HajiUmrahs.fromJson(Map<String, dynamic> json) {
+    if (json['haji_umrah'] != null) {
+      hajiUmrah = <HajiUmrah>[];
+      json['haji_umrah'].forEach((v) {
+        hajiUmrah!.add(new HajiUmrah.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.dzikir != null) {
-      data['dzikir'] = this.dzikir!.map((v) => v.toJson()).toList();
+    if (this.hajiUmrah != null) {
+      data['haji_umrah'] = this.hajiUmrah!.map((v) => v.toJson()).toList();
     }
     return data;
   }
 }
 
-class Dzikir {
+class HajiUmrah {
   String? categoryName;
   int? categoryNo;
-  int? chapterCount;
   String? icon;
+  int? chapterCount;
   List<Chapters>? chapters;
 
-  Dzikir(
+  HajiUmrah(
       {this.categoryName,
       this.categoryNo,
-      this.chapterCount,
       this.icon,
+      this.chapterCount,
       this.chapters});
 
-  Dzikir.fromJson(Map<String, dynamic> json) {
+  HajiUmrah.fromJson(Map<String, dynamic> json) {
     categoryName = json['category_name'];
     categoryNo = json['category_no'];
     icon = json['icon'];
@@ -52,6 +52,7 @@ class Dzikir {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['category_name'] = this.categoryName;
     data['category_no'] = this.categoryNo;
+    data['icon'] = this.icon;
     data['chapter_count'] = this.chapterCount;
     if (this.chapters != null) {
       data['chapters'] = this.chapters!.map((v) => v.toJson()).toList();

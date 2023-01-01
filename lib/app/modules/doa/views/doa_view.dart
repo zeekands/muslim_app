@@ -56,7 +56,7 @@ class DoaView extends GetView<DoaController> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      "assets/images/moon.png",
+                      controller.allDoa.doa![index].icon!,
                       height: ScreenUtil().setHeight(32),
                     ),
                     10.verticalSpace,
