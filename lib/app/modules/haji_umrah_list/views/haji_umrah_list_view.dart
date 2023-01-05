@@ -4,26 +4,26 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../routes/app_pages.dart';
-import '../controllers/haji_umrah_controller.dart';
+import '../controllers/haji_umrah_list_controller.dart';
 
-class HajiUmrahView extends GetView<HajiUmrahController> {
-  const HajiUmrahView({Key? key}) : super(key: key);
+class HajiUmrahListView extends GetView<HajiUmrahListController> {
+  const HajiUmrahListView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Haji & Umrah'),
+        title: Text(controller.HajiUmrahCategory),
       ),
       body: controller.obx(
         (state) => ListView.builder(
-          itemCount: controller.allHajiUmrah.hajiUmrah?.length,
+          itemCount: controller.hajiUmrah.chapterCount,
           itemBuilder: (context, index) {
             return Card(
               elevation: 0,
               child: GestureDetector(
                 onTap: () {
-                  Get.toNamed(Routes.HAJI_UMRAH_LIST,
-                      arguments: controller.HajiUmrahList[index]);
+                  Get.toNamed(Routes.HAJI_UMRAH_LIST_DETAIL,
+                      arguments: controller.hajiUmrah.chapters?[index]);
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -38,7 +38,7 @@ class HajiUmrahView extends GetView<HajiUmrahController> {
                       10.horizontalSpace,
                       Flexible(
                         child: Text(
-                          '${controller.allHajiUmrah.hajiUmrah?[index].categoryName}',
+                          '${controller.hajiUmrah.chapters?[index].chapterName}',
                           style: TextStyle(
                               fontSize: 13.sp, fontWeight: FontWeight.bold),
                         ),

@@ -13,21 +13,17 @@ class AtkhtarController extends GetxController with StateMixin {
   void onInit() async {
     super.onInit();
     change(null, status: RxStatus.empty());
-    loadAtkhtar();
+    await loadAtkhtar();
   }
 
-  void loadAtkhtar() async {
+  Future<void> loadAtkhtar() async {
     change(null, status: RxStatus.loading());
-    atkhtars = Atkhtars.fromJson(
-            jsonDecode(await rootBundle.loadString('assets/json/athkar.json')))
-        .athkar
-        ?.where((element) => element.period == 'Evening')
-        .toList() as List<Atkhar>;
+    atkhtars = Atkhtars.fromJson(jsonDecode(
+            await rootBundle.loadString('assets/json/athkar_evening.json')))
+        .athkar as List<Atkhar>;
     atkhtarMorning = Atkhtars.fromJson(
             jsonDecode(await rootBundle.loadString('assets/json/athkar.json')))
-        .athkar
-        ?.where((element) => element.period == 'Morning')
-        .toList() as List<Atkhar>;
+        .athkar as List<Atkhar>;
 
     change(atkhtars, status: RxStatus.success());
   }

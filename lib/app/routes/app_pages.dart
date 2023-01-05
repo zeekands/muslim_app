@@ -18,12 +18,24 @@ import '../modules/doa_list_detail/bindings/doa_list_detail_binding.dart';
 import '../modules/doa_list_detail/views/doa_list_detail_view.dart';
 import '../modules/dzikir/bindings/dzikir_binding.dart';
 import '../modules/dzikir/views/dzikir_view.dart';
+import '../modules/dzikir_list/bindings/dzikir_list_binding.dart';
+import '../modules/dzikir_list/views/dzikir_list_view.dart';
+import '../modules/dzikir_list_detail/bindings/dzikir_list_detail_binding.dart';
+import '../modules/dzikir_list_detail/views/dzikir_list_detail_view.dart';
 import '../modules/feedback/bindings/feedback_binding.dart';
 import '../modules/feedback/views/feedback_view.dart';
 import '../modules/hadist/bindings/hadist_binding.dart';
 import '../modules/hadist/views/hadist_view.dart';
+import '../modules/hadist_list/bindings/hadist_list_binding.dart';
+import '../modules/hadist_list/views/hadist_list_view.dart';
+import '../modules/hadist_list_detail/bindings/hadist_list_detail_binding.dart';
+import '../modules/hadist_list_detail/views/hadist_list_detail_view.dart';
 import '../modules/haji_umrah/bindings/haji_umrah_binding.dart';
 import '../modules/haji_umrah/views/haji_umrah_view.dart';
+import '../modules/haji_umrah_list/bindings/haji_umrah_list_binding.dart';
+import '../modules/haji_umrah_list/views/haji_umrah_list_view.dart';
+import '../modules/haji_umrah_list_detail/bindings/haji_umrah_list_detail_binding.dart';
+import '../modules/haji_umrah_list_detail/views/haji_umrah_list_detail_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/juz_surah/bindings/juz_surah_binding.dart';
@@ -36,6 +48,10 @@ import '../modules/quran/bindings/quran_binding.dart';
 import '../modules/quran/views/quran_view.dart';
 import '../modules/ramadhan/bindings/ramadhan_binding.dart';
 import '../modules/ramadhan/views/ramadhan_view.dart';
+import '../modules/ramadhan_list/bindings/ramadhan_list_binding.dart';
+import '../modules/ramadhan_list/views/ramadhan_list_view.dart';
+import '../modules/ramadhan_list_detail/bindings/ramadhan_list_detail_binding.dart';
+import '../modules/ramadhan_list_detail/views/ramadhan_list_detail_view.dart';
 import '../modules/salah_time/bindings/salah_time_binding.dart';
 import '../modules/salah_time/views/salah_time_view.dart';
 import '../modules/splashscreen/bindings/splashscreen_binding.dart';
@@ -169,6 +185,46 @@ class AppPages {
       name: _Paths.HAJI_UMRAH,
       page: () => const HajiUmrahView(),
       binding: HajiUmrahBinding(),
+    ),
+    GetPage(
+      name: _Paths.HADIST_LIST,
+      page: () => const HadistListView(),
+      binding: HadistListBinding(),
+    ),
+    GetPage(
+      name: _Paths.HADIST_LIST_DETAIL,
+      page: () => const HadistListDetailView(),
+      binding: HadistListDetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.HAJI_UMRAH_LIST,
+      page: () => const HajiUmrahListView(),
+      binding: HajiUmrahListBinding(),
+    ),
+    GetPage(
+      name: _Paths.HAJI_UMRAH_LIST_DETAIL,
+      page: () => const HajiUmrahListDetailView(),
+      binding: HajiUmrahListDetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.DZIKIR_LIST,
+      page: () => const DzikirListView(),
+      binding: DzikirListBinding(),
+    ),
+    GetPage(
+      name: _Paths.DZIKIR_LIST_DETAIL,
+      page: () => const DzikirListDetailView(),
+      binding: DzikirListDetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.RAMADHAN_LIST,
+      page: () => const RamadhanListView(),
+      binding: RamadhanListBinding(),
+    ),
+    GetPage(
+      name: _Paths.RAMADHAN_LIST_DETAIL,
+      page: () => const RamadhanListDetailView(),
+      binding: RamadhanListDetailBinding(),
     ),
   ];
 }

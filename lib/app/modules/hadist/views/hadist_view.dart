@@ -36,7 +36,7 @@ class HadistView extends GetView<HadistController> {
           itemBuilder: (BuildContext ctx, index) {
             return GestureDetector(
               onTap: () {
-                Get.toNamed(Routes.DOA_LIST,
+                Get.toNamed(Routes.HADIST_LIST,
                     arguments: controller.HadistList[index]);
               },
               child: Container(

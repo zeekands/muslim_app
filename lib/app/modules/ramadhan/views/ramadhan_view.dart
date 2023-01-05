@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
 import '../controllers/ramadhan_controller.dart';
 
 class RamadhanView extends GetView<RamadhanController> {
@@ -21,8 +22,8 @@ class RamadhanView extends GetView<RamadhanController> {
               elevation: 0,
               child: GestureDetector(
                 onTap: () {
-                  // Get.toNamed(Routes.DOA_LIST_DETAIL,
-                  //     arguments: controller.doa.chapters?[index]);
+                  Get.toNamed(Routes.RAMADHAN_LIST,
+                      arguments: controller.RamadhanList[index]);
                 },
                 child: Container(
                   decoration: BoxDecoration(

@@ -27,6 +27,14 @@ abstract class Routes {
   static const SPLASHSCREEN = _Paths.SPLASHSCREEN;
   static const RAMADHAN = _Paths.RAMADHAN;
   static const HAJI_UMRAH = _Paths.HAJI_UMRAH;
+  static const HADIST_LIST = _Paths.HADIST_LIST;
+  static const HADIST_LIST_DETAIL = _Paths.HADIST_LIST_DETAIL;
+  static const HAJI_UMRAH_LIST = _Paths.HAJI_UMRAH_LIST;
+  static const HAJI_UMRAH_LIST_DETAIL = _Paths.HAJI_UMRAH_LIST_DETAIL;
+  static const DZIKIR_LIST = _Paths.DZIKIR_LIST;
+  static const DZIKIR_LIST_DETAIL = _Paths.DZIKIR_LIST_DETAIL;
+  static const RAMADHAN_LIST = _Paths.RAMADHAN_LIST;
+  static const RAMADHAN_LIST_DETAIL = _Paths.RAMADHAN_LIST_DETAIL;
 }
 
 abstract class _Paths {
@@ -55,4 +63,12 @@ abstract class _Paths {
   static const SPLASHSCREEN = '/splashscreen';
   static const RAMADHAN = '/ramadhan';
   static const HAJI_UMRAH = '/haji-umrah';
+  static const HADIST_LIST = '/hadist-list';
+  static const HADIST_LIST_DETAIL = '/hadist-list-detail';
+  static const HAJI_UMRAH_LIST = '/haji-umrah-list';
+  static const HAJI_UMRAH_LIST_DETAIL = '/haji-umrah-list-detail';
+  static const DZIKIR_LIST = '/dzikir-list';
+  static const DZIKIR_LIST_DETAIL = '/dzikir-list-detail';
+  static const RAMADHAN_LIST = '/ramadhan-list';
+  static const RAMADHAN_LIST_DETAIL = '/ramadhan-list-detail';
 }

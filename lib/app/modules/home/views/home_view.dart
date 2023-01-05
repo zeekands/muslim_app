@@ -1,3 +1,4 @@
+import 'package:app_settings/app_settings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -239,6 +240,8 @@ class HomeView extends GetView<HomeController> {
               Get.to(() => const FeedbackView());
             } else if (value == 2) {
               Get.to(() => const AboutView());
+            } else if (value == 3) {
+              AppSettings.openNotificationSettings();
             }
           },
           itemBuilder: (context) => [
@@ -267,6 +270,19 @@ class HomeView extends GetView<HomeController> {
                 ],
               ),
               value: 2,
+            ),
+            PopupMenuItem(
+              child: Row(
+                children: [
+                  const Icon(
+                    Icons.notifications_active_outlined,
+                    color: Colors.black,
+                  ),
+                  10.horizontalSpace,
+                  const Text("Notification"),
+                ],
+              ),
+              value: 3,
             ),
           ],
         ),

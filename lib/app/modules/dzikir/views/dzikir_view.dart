@@ -36,7 +36,7 @@ class DzikirView extends GetView<DzikirController> {
           itemBuilder: (BuildContext ctx, index) {
             return GestureDetector(
               onTap: () {
-                Get.toNamed(Routes.DOA_LIST,
+                Get.toNamed(Routes.DZIKIR_LIST,
                     arguments: controller.DzikirList[index]);
               },
               child: Container(
