@@ -10,9 +10,14 @@ class QuranController extends GetxController
   var page = 0.obs;
   PageController pageController = PageController();
   final juzRef = FirebaseFirestore.instance.collection('juz');
+  final surahRef = FirebaseFirestore.instance.collection('surah');
 
   Stream<QuerySnapshot> juzStream() {
     return juzRef.snapshots();
+  }
+
+  Stream<QuerySnapshot> surahStream() {
+    return surahRef.snapshots();
   }
 
   @override

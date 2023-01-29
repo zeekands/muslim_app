@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
+import 'package:muslim_app/app/routes/app_pages.dart';
 import 'package:muslim_app/app/utils/text.dart';
 
 import '../controllers/about_controller.dart';
@@ -31,7 +32,7 @@ class AboutView extends GetView<AboutController> {
             ListTile(
               dense: T,
               onTap: () {
-                showAboutDialog(context: context);
+                Get.toNamed(Routes.DEVELOPER);
               },
               leading: TextRegular(
                 text: "Tentang",

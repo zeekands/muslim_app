@@ -10,6 +10,8 @@ import '../modules/detail_surah/bindings/detail_surah_binding.dart';
 import '../modules/detail_surah/views/detail_surah_view.dart';
 import '../modules/detail_surah_list/bindings/detail_surah_list_binding.dart';
 import '../modules/detail_surah_list/views/detail_surah_list_view.dart';
+import '../modules/developer/bindings/developer_binding.dart';
+import '../modules/developer/views/developer_view.dart';
 import '../modules/doa/bindings/doa_binding.dart';
 import '../modules/doa/views/doa_view.dart';
 import '../modules/doa_list/bindings/doa_list_binding.dart';
@@ -225,6 +227,11 @@ class AppPages {
       name: _Paths.RAMADHAN_LIST_DETAIL,
       page: () => const RamadhanListDetailView(),
       binding: RamadhanListDetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.DEVELOPER,
+      page: () => const DeveloperView(),
+      binding: DeveloperBinding(),
     ),
   ];
 }

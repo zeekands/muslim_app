@@ -58,7 +58,6 @@ class JuzSurahView extends GetView<JuzSurahController> {
             },
             icon: const Icon(Icons.share),
           ),
-          const Center(child: Text(' 1 / 44 ')),
           IconButton(
             onPressed: () {
               Get.snackbar(
@@ -79,27 +78,51 @@ class JuzSurahView extends GetView<JuzSurahController> {
           stream: controller.juzStream(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              return PageView.builder(
-                controller: controller.pageController,
-                reverse: T,
-                itemCount:
-                    snapshot.data!.docs[Get.arguments].get('data').length,
-                itemBuilder: (context, index) {
-                  log(snapshot.data!.docs[Get.arguments].get('data')[index]);
-                  return CachedNetworkImage(
-                    imageUrl:
-                        snapshot.data!.docs[Get.arguments].get('data')[index],
-                    fit: BoxFit.cover,
-                    height: 1.sh,
-                    width: 1.sw,
-                    progressIndicatorBuilder: (context, url, progress) {
-                      return const Center(
-                        child: CircularProgressIndicator(),
-                      );
-                    },
-                  );
-                },
-              ).paddingOnly(top: 10.h);
+              try {
+                return PageView.builder(
+                  controller: controller.pageController,
+                  reverse: T,
+                  itemCount:
+                      snapshot.data!.docs[Get.arguments].get('Data').length,
+                  itemBuilder: (context, index) {
+                    log(snapshot.data!.docs[Get.arguments].id);
+                    return CachedNetworkImage(
+                      imageUrl:
+                          snapshot.data!.docs[Get.arguments].get('Data')[index],
+                      fit: BoxFit.cover,
+                      height: 1.sh,
+                      width: 1.sw,
+                      progressIndicatorBuilder: (context, url, progress) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      },
+                    );
+                  },
+                ).paddingOnly(top: 10.h);
+              } catch (e) {
+                return PageView.builder(
+                  controller: controller.pageController,
+                  reverse: T,
+                  itemCount:
+                      snapshot.data!.docs[Get.arguments].get('data').length,
+                  itemBuilder: (context, index) {
+                    log(snapshot.data!.docs[Get.arguments].id);
+                    return CachedNetworkImage(
+                      imageUrl:
+                          snapshot.data!.docs[Get.arguments].get('data')[index],
+                      fit: BoxFit.cover,
+                      height: 1.sh,
+                      width: 1.sw,
+                      progressIndicatorBuilder: (context, url, progress) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      },
+                    );
+                  },
+                ).paddingOnly(top: 10.h);
+              }
             } else {
               return const Center(
                 child: CircularProgressIndicator(),

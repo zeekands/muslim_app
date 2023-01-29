@@ -53,70 +53,24 @@ class QuranView extends GetView<QuranController> {
       onRefresh: () async {
         await controller.loadSurah();
       },
-      child: FutureBuilder<List<Data>>(
-        future: controller.loadSurah(),
+      child: StreamBuilder<QuerySnapshot>(
+        stream: controller.surahStream(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
-              itemCount: snapshot.data!.length,
+              itemCount: snapshot.data?.docs.length,
               itemBuilder: (context, index) {
+                var data = snapshot.data?.docs;
+                data?.sort(
+                    (doc1, doc2) => int.parse(doc1.id) - int.parse(doc2.id));
+                var singleData = data?[index];
                 return Card(
                   elevation: 0,
                   child: GestureDetector(
                     onTap: () {
-                      // showCupertinoModalPopup(
-                      //   context: context,
-                      //   builder: (BuildContext context) => CupertinoActionSheet(
-                      //     title: const Text('Pilih Tipe Al-Quran'),
-                      //     message: const Text('Your options are '),
-                      //     cancelButton: CupertinoActionSheetAction(
-                      //       child: const Text('Cancel',
-                      //           style: TextStyle(color: Colors.red)),
-                      //       isDefaultAction: true,
-                      //       onPressed: () {
-                      //         Navigator.pop(context, 'Cancel');
-                      //       },
-                      //     ),
-                      //     actions: <Widget>[
-                      //       CupertinoActionSheetAction(
-                      //         child: const Text('Al-Quran Per Ayat',
-                      //             style: TextStyle(color: green)),
-                      //         onPressed: () {
-                      //           Get.back();
-                      //           Get.toNamed(
-                      //             Routes.DETAIL_SURAH_LIST,
-                      //             arguments: [
-                      //               snapshot.data![index].number,
-                      //               snapshot.data![index].englishName
-                      //             ],
-                      //           );
-                      //         },
-                      //       ),
-                      //       CupertinoActionSheetAction(
-                      //         child: const Text('Al-Quran Per Halaman',
-                      //             style: TextStyle(color: green)),
-                      //         onPressed: () {
-                      //           Get.back();
-                      //           Get.toNamed(
-                      //             Routes.DETAIL_SURAH,
-                      //             arguments: [
-                      //               snapshot.data![index].number,
-                      //               snapshot.data![index].englishName
-                      //             ],
-                      //           );
-                      //         },
-                      //       )
-                      //     ],
-                      //   ),
-                      // );
-
-                      Get.snackbar(
-                        "Under Development",
-                        "Fitur ini sedang dalam tahap pengembangan",
-                        snackPosition: SnackPosition.BOTTOM,
-                        backgroundColor: Colors.orange,
-                        colorText: Colors.white,
-                        margin: const EdgeInsets.all(10),
+                      Get.toNamed(
+                        Routes.DETAIL_SURAH,
+                        arguments: int.parse(singleData?.id ?? "0") - 1,
                       );
                     },
                     child: Container(
@@ -142,7 +96,7 @@ class QuranView extends GetView<QuranController> {
                                 ),
                                 Center(
                                   child: Text(
-                                    '${snapshot.data![index].number}',
+                                    '${singleData?.id}',
                                     style: TextStyle(
                                       fontSize: ScreenUtil().setSp(10),
                                       fontWeight: FontWeight.bold,
@@ -159,14 +113,14 @@ class QuranView extends GetView<QuranController> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                '${snapshot.data![index].englishName}',
+                                '${singleData?.get("name")}',
                                 style: TextStyle(
                                     fontSize: 13.sp,
                                     fontWeight: FontWeight.bold),
                               ),
                               5.verticalSpace,
                               Text(
-                                '${snapshot.data![index].revelationType} ${snapshot.data![index].numberOfAyahs} Ayat',
+                                '${singleData?.get("kind")} ${singleData?.get("total")} Ayat',
                                 style: TextStyle(
                                   fontSize: 11.sp,
                                   color: Colors.grey[500],
@@ -177,7 +131,7 @@ class QuranView extends GetView<QuranController> {
                           const Spacer(),
                           SizedBox(
                             width: 100.w,
-                            child: Text('${snapshot.data![index].name}',
+                            child: Text('${singleData?.get("arabic_name")}',
                                 textAlign: TextAlign.right,
                                 style: TextStyle(
                                     fontSize: 16.sp,

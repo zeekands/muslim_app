@@ -35,6 +35,7 @@ abstract class Routes {
   static const DZIKIR_LIST_DETAIL = _Paths.DZIKIR_LIST_DETAIL;
   static const RAMADHAN_LIST = _Paths.RAMADHAN_LIST;
   static const RAMADHAN_LIST_DETAIL = _Paths.RAMADHAN_LIST_DETAIL;
+  static const DEVELOPER = _Paths.DEVELOPER;
 }
 
 abstract class _Paths {
@@ -71,4 +72,5 @@ abstract class _Paths {
   static const DZIKIR_LIST_DETAIL = '/dzikir-list-detail';
   static const RAMADHAN_LIST = '/ramadhan-list';
   static const RAMADHAN_LIST_DETAIL = '/ramadhan-list-detail';
+  static const DEVELOPER = '/developer';
 }

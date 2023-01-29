@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -5,14 +6,20 @@ import 'package:muslim_app/app/data/models/detail_surah_with_eng.dart';
 import 'package:muslim_app/app/data/providers/detail_surah_provider.dart';
 
 class DetailSurahController extends GetxController with StateMixin {
-  final surahNumber = Get.arguments[0].toString();
-  final surahName = Get.arguments[1].toString();
+  // final surahNumber = Get.arguments[0].toString();
+  // final surahName = Get.arguments[1].toString();
   Duration duration = Duration.zero;
   Duration position = Duration.zero;
   final isPlaying = false.obs;
   final dataSound = "".obs;
   final indexSound = 0.obs;
   String isiSurah = "";
+
+  final surahRef = FirebaseFirestore.instance.collection('surah');
+
+  Stream<QuerySnapshot> surahStream() {
+    return surahRef.snapshots();
+  }
 
   final PageController pageController = PageController();
   final detailSurahWithEng = DetailSurahWithEng(
@@ -31,17 +38,17 @@ class DetailSurahController extends GetxController with StateMixin {
   @override
   void onInit() async {
     super.onInit();
-    change(null, status: RxStatus.loading());
-    await loadSurahWithEng(surahNumber).then(
-      (value) {
-        detailSurahWithEng.value = value;
-        change(null, status: RxStatus.success());
-      },
-    ).catchError(
-      (err) {
-        change(null, status: RxStatus.error(err.toString()));
-      },
-    );
+    // change(null, status: RxStatus.loading());
+    // await loadSurahWithEng(surahNumber).then(
+    //   (value) {
+    //     detailSurahWithEng.value = value;
+    //     change(null, status: RxStatus.success());
+    //   },
+    // ).catchError(
+    //   (err) {
+    //     change(null, status: RxStatus.error(err.toString()));
+    //   },
+    // );
   }
 
   final indexPage = 0.obs;
